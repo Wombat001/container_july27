@@ -1,0 +1,5 @@
+REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE
+wombat001docker/mydoimage   v0.01               23d4add6a000        2 minutes ago       954MB
+node                        latest              7f312bedcea0        4 days ago          944MB
+nginx                       latest              8cf1bfb43ff5        5 days ago          132MB
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
