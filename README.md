@@ -139,3 +139,4 @@ ingress-nginx   LoadBalancer   10.245.17.17   157.230.196.98   80:30077/TCP,443:
 ```
 
 Note: `EXTERNAL-IP` will show an external IP address once the load balancer has been deployed. A `<pending>` indicates that the cloud provider is still provisioning the load balancer. You can verify the that the load balancer has indeed been provisioned by checking it in your cloud console.
+# container_july27
