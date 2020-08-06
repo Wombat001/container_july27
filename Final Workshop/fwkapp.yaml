@@ -1,0 +1,130 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fwkapp-cm
+  labels:
+    app: fwkapp
+
+data:
+  WORDPRESS_DB_USER: root
+  #DB_HOST: nwdb-svc.nw.svc.cluster.local #fully qualified domain name
+  WORDPRESS_DB_HOST: fwkdb-cluster-mysql.fwk.svc.cluster.local
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+   name: fwkapp-pvc
+   labels:
+      app: fwkapp
+spec:
+   accessModes:
+   - ReadWriteOnce
+   resources:
+      requests:
+         storage: 1Gi
+   storageClassName: do-block-storage 
+   volumeMode: Filesystem
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fwkapp-deploy
+  labels:
+    app: fwkapp
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fwkapp
+  template:
+    metadata:
+      name: fwkapp-pod
+      labels:
+        app: fwkapp
+    spec:
+      volumes: 
+      - name: fwkapp-vol
+        persistentVolumeClaim:
+          claimName: fwkapp-pvc
+      containers:
+        - name: fwkapp-container
+          image: wordpress
+          imagePullPolicy: IfNotPresent
+          #put in some hard parameters to govern the resources
+          resources: 
+            requests:
+              cpu: "200m"
+              memory: "16Mi"
+            limits:
+              memory: "32Mi"
+          env:
+          - name: WORDPRESS_DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                #name: nw-secret
+                #name: mysql-secret
+                name: fwk-secret
+                #key: MYSQL_ROOT_PASSWORD
+                key: ROOT_PASSWORD
+          - name: INSTANCE_IP_ADDRESS
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP 
+            envFrom:
+          - configMapRef:
+              name: fwkapp-cm
+            ports:
+            - name: fwkapp-port
+              containerPort: 80
+            volumeMounts:
+            - name: fwkapp-vol
+              mountPath: /var/www/html
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fwkapp-svc
+  #namespace: nwapp-svc-ns # namespace can be set in execution 
+  labels:
+    app: fwkapp
+
+spec: 
+  type: ClusterIP
+  selector:
+    app: fwkapp
+  ports:
+  - port: 90
+    targetPort: fwkapp-port
+
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: fwkapp-ing
+  labels:
+    app: fwkapp
+  annotations:
+    nginx.ingress.kubernetes.io/limit-rps: "5"
+
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: acme.167.172.5.11.nip.io
+  # - host: fwkapp.167.172.5.11.nip.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: fwkapp-svc
+          servicePort: 80 
+

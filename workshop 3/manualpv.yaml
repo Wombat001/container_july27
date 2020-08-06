@@ -1,0 +1,40 @@
+---
+# See https://github.com/digitalocean/csi-digitalocean/blob/master/examples/kubernetes/pod-single-existing-volume/README.md
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+   name: my-pv
+   labels:
+      name: my-pv
+   annotations:
+      pv.kubernetes.io/provisioned-by: dobs.csi.digitalocean.com
+spec:
+   accessModes:
+   - ReadWriteOnce
+   - ReadOnlyMany
+   capacity:
+      storage: 1Gi
+   csi:
+      driver: dobs.csi.digitalocean.com
+      fsType: ext4
+      volumeHandle: abc123 # doctl compute volume list
+      volumeAttributes:
+         com.digitalocean.csi/noformat: "true"
+   storageClassName: do-block-storage 
+   volumeMode: Filesystem
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+   name: my-pvc
+   labels:
+      name: my-pvc
+spec:
+   accessModes:
+   - ReadWriteOnce
+   resources:
+      requests:
+         storage: 990Mi
+   volumeName: my-pv
+      

@@ -1,0 +1,648 @@
+NAME                                                           READY   STATUS             RESTARTS   AGE     IP             NODE                   NOMINATED NODE   READINESS GATES
+pod/nwingress-nginx-ingress-controller-6445774c95-z8jsj        1/1     Running            0          2m10s   10.244.0.251   pool-5ec953s5l-3rri4   <none>           <none>
+pod/nwingress-nginx-ingress-default-backend-77d487ddb5-8v5jt   0/1     ImagePullBackOff   0          2m10s   10.244.0.181   pool-5ec953s5l-3rri4   <none>           <none>
+NAME                                              TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE     SELECTOR
+service/nwingress-nginx-ingress-controller        LoadBalancer   10.245.43.162   <pending>     80:31789/TCP,443:30548/TCP   2m11s   app.kubernetes.io/component=controller,app=nginx-ingress,release=nwingress
+service/nwingress-nginx-ingress-default-backend   ClusterIP      10.245.124.31   <none>        80/TCP                       2m11s   app.kubernetes.io/component=default-backend,app=nginx-ingress,release=nwingress
+NAME                                                      READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS                      IMAGES                                                          SELECTOR
+deployment.apps/nwingress-nginx-ingress-controller        1/1     1            1           2m11s   nginx-ingress-controller        us.gcr.io/k8s-artifacts-prod/ingress-nginx/controller:v0.34.1   app=nginx-ingress,release=nwingress
+deployment.apps/nwingress-nginx-ingress-default-backend   0/1     1            0           2m11s   nginx-ingress-default-backend   chukmunlee/ingress_default_backend:v1                           app=nginx-ingress,release=nwingress
+NAME                                                                 DESIRED   CURRENT   READY   AGE     CONTAINERS                      IMAGES                                                          SELECTOR
+replicaset.apps/nwingress-nginx-ingress-controller-6445774c95        1         1         1       2m10s   nginx-ingress-controller        us.gcr.io/k8s-artifacts-prod/ingress-nginx/controller:v0.34.1   app=nginx-ingress,pod-template-hash=6445774c95,release=nwingress
+replicaset.apps/nwingress-nginx-ingress-default-backend-77d487ddb5   1         1         0       2m10s   nginx-ingress-default-backend   chukmunlee/ingress_default_backend:v1                           app=nginx-ingress,pod-template-hash=77d487ddb5,release=nwingress
+NAME     	NAMESPACE    	REVISION	UPDATED                             	STATUS  	CHART               	APP VERSION
+nwingress	nginx-ingress	1       	2020-07-29 12:10:50.448401 +0800 +08	deployed	nginx-ingress-1.41.2	v0.34.1    
+NAME     	NAMESPACE    	REVISION	UPDATED                             	STATUS  	CHART               	APP VERSION
+nwingress	nginx-ingress	1       	2020-07-29 12:10:50.448401 +0800 +08	deployed	nginx-ingress-1.41.2	v0.34.1    
+NAME     	NAMESPACE    	REVISION	UPDATED                             	STATUS  	CHART               	APP VERSION
+nwingress	nginx-ingress	1       	2020-07-29 12:10:50.448401 +0800 +08	deployed	nginx-ingress-1.41.2	v0.34.1    
+namespace/fortune-ns unchanged
+deployment.apps/fortune-deploy unchanged
+service/fortune-svc unchanged
+NAME                                      TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
+nwingress-nginx-ingress-controller        LoadBalancer   10.245.43.162   167.172.5.11   80:31789/TCP,443:30548/TCP   114m
+nwingress-nginx-ingress-default-backend   ClusterIP      10.245.124.31   <none>         80/TCP                       114m
+namespace/fortune-ns unchanged
+deployment.apps/fortune-deploy unchanged
+service/fortune-svc unchanged
+namespace/fortune-ns unchanged
+deployment.apps/fortune-deploy unchanged
+service/fortune-svc unchanged
+ingress.networking.k8s.io/fortune-ing created
+NAME                                      TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
+nwapp-svc                                 ClusterIP      10.245.56.172   <none>         3000/TCP                     23s
+nwingress-nginx-ingress-controller        LoadBalancer   10.245.43.162   167.172.5.11   80:31789/TCP,443:30548/TCP   132m
+nwingress-nginx-ingress-default-backend   ClusterIP      10.245.124.31   <none>         80/TCP                       132m
+NAME                                      TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
+nwapp-svc                                 ClusterIP      10.245.56.172   <none>         3000/TCP                     52s
+nwingress-nginx-ingress-controller        LoadBalancer   10.245.43.162   167.172.5.11   80:31789/TCP,443:30548/TCP   132m
+nwingress-nginx-ingress-default-backend   ClusterIP      10.245.124.31   <none>         80/TCP                       132m
+NAME                                      TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
+nwapp-svc                                 ClusterIP      10.245.56.172   <none>         3000/TCP                     110s
+nwingress-nginx-ingress-controller        LoadBalancer   10.245.43.162   167.172.5.11   80:31789/TCP,443:30548/TCP   133m
+nwingress-nginx-ingress-default-backend   ClusterIP      10.245.124.31   <none>         80/TCP                       133m
+NAME                                      TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
+nwapp-svc                                 ClusterIP      10.245.56.172   <none>         3000/TCP                     6m30s
+nwingress-nginx-ingress-controller        LoadBalancer   10.245.43.162   167.172.5.11   80:31789/TCP,443:30548/TCP   138m
+nwingress-nginx-ingress-default-backend   ClusterIP      10.245.124.31   <none>         80/TCP                       138m
+NAME                                      TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
+nwapp-svc                                 ClusterIP      10.245.56.172   <none>         3000/TCP                     8m19s
+nwingress-nginx-ingress-controller        LoadBalancer   10.245.43.162   167.172.5.11   80:31789/TCP,443:30548/TCP   139m
+nwingress-nginx-ingress-default-backend   ClusterIP      10.245.124.31   <none>         80/TCP                       139m
+NAME        TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+nwapp-svc   ClusterIP   10.245.129.113   <none>        3000/TCP   25s
+nwdb-svc    ClusterIP   10.245.70.146    <none>        3306/TCP   174m
+Name:             nwapp-ing
+Namespace:        wk2
+Address:          188.166.249.56
+Default backend:  default-http-backend:80 (<none>)
+Rules:
+  Host                       Path  Backends
+  ----                       ----  --------
+  nwapp.167.172.5.11.nip.io  
+                             /   nwapp-svc:3000 (10.244.0.159:3000,10.244.1.53:3000)
+Annotations:
+  kubectl.kubernetes.io/last-applied-configuration:  {"apiVersion":"networking.k8s.io/v1beta1","kind":"Ingress","metadata":{"annotations":{},"labels":{"app":"northwind"},"name":"nwapp-ing","namespace":"wk2"},"spec":{"rules":[{"host":"nwapp.167.172.5.11.nip.io","http":{"paths":[{"backend":{"serviceName":"nwapp-svc","servicePort":3000},"path":"/"}]}}]}}
+
+Events:
+  Type    Reason  Age    From                      Message
+  ----    ------  ----   ----                      -------
+  Normal  CREATE  2m22s  nginx-ingress-controller  Ingress wk2/nwapp-ing
+  Normal  UPDATE  85s    nginx-ingress-controller  Ingress wk2/nwapp-ing
+Name:             nwapp-ing
+Namespace:        wk2
+Address:          188.166.249.56
+Default backend:  default-http-backend:80 (<none>)
+Rules:
+  Host                       Path  Backends
+  ----                       ----  --------
+  nwapp.167.172.5.11.nip.io  
+                             /   nwapp-svc:3000 (10.244.0.159:3000,10.244.1.53:3000)
+Annotations:
+  kubectl.kubernetes.io/last-applied-configuration:  {"apiVersion":"networking.k8s.io/v1beta1","kind":"Ingress","metadata":{"annotations":{},"labels":{"app":"northwind"},"name":"nwapp-ing","namespace":"wk2"},"spec":{"rules":[{"host":"nwapp.167.172.5.11.nip.io","http":{"paths":[{"backend":{"serviceName":"nwapp-svc","servicePort":3000},"path":"/"}]}}]}}
+
+Events:
+  Type    Reason  Age   From                      Message
+  ----    ------  ----  ----                      -------
+  Normal  CREATE  35m   nginx-ingress-controller  Ingress wk2/nwapp-ing
+  Normal  UPDATE  34m   nginx-ingress-controller  Ingress wk2/nwapp-ing
+Name:             nwappv2-ing
+Namespace:        wk2
+Address:          188.166.249.56
+Default backend:  default-http-backend:80 (<none>)
+Rules:
+  Host                         Path  Backends
+  ----                         ----  --------
+  nwappv2.167.172.5.11.nip.io  
+                               /   nwappv2-svc:nwappv2svcport (10.244.0.24:3000,10.244.0.26:3000)
+Annotations:
+  kubectl.kubernetes.io/last-applied-configuration:  {"apiVersion":"networking.k8s.io/v1beta1","kind":"Ingress","metadata":{"annotations":{"nginx-ingress.kubernetes.io/canary":"true","nginx-ingress.kubernetes.io/canary-weight":"50"},"labels":{"app":"northwind"},"name":"nwappv2-ing","namespace":"wk2"},"spec":{"rules":[{"host":"nwappv2.167.172.5.11.nip.io","http":{"paths":[{"backend":{"serviceName":"nwappv2-svc","servicePort":"nwappv2svcport"},"path":"/"}]}}]}}
+
+  nginx-ingress.kubernetes.io/canary:         true
+  nginx-ingress.kubernetes.io/canary-weight:  50
+Events:
+  Type    Reason  Age                  From                      Message
+  ----    ------  ----                 ----                      -------
+  Normal  CREATE  10m                  nginx-ingress-controller  Ingress wk2/nwappv2-ing
+  Normal  UPDATE  3m26s (x2 over 10m)  nginx-ingress-controller  Ingress wk2/nwappv2-ing
+Name:             nwappv2-ing
+Namespace:        wk2
+Address:          188.166.249.56
+Default backend:  default-http-backend:80 (<none>)
+Rules:
+  Host                         Path  Backends
+  ----                         ----  --------
+  nwappv2.167.172.5.11.nip.io  
+                               /   nwappv2-svc:nwappv2svcport (10.244.0.24:3000,10.244.0.26:3000)
+Annotations:
+  kubectl.kubernetes.io/last-applied-configuration:  {"apiVersion":"networking.k8s.io/v1beta1","kind":"Ingress","metadata":{"annotations":{"nginx-ingress.kubernetes.io/canary":"true","nginx-ingress.kubernetes.io/canary-weight":"10"},"labels":{"app":"northwind"},"name":"nwappv2-ing","namespace":"wk2"},"spec":{"rules":[{"host":"nwappv2.167.172.5.11.nip.io","http":{"paths":[{"backend":{"serviceName":"nwappv2-svc","servicePort":"nwappv2svcport"},"path":"/"}]}}]}}
+
+  nginx-ingress.kubernetes.io/canary:         true
+  nginx-ingress.kubernetes.io/canary-weight:  10
+Events:
+  Type    Reason  Age                From                      Message
+  ----    ------  ----               ----                      -------
+  Normal  CREATE  20m                nginx-ingress-controller  Ingress wk2/nwappv2-ing
+  Normal  UPDATE  75s (x3 over 20m)  nginx-ingress-controller  Ingress wk2/nwappv2-ing
+NAME                                  READY   STATUS    RESTARTS   AGE
+pod/cilium-6ctjx                      1/1     Running   0          29h
+pod/cilium-mslpt                      1/1     Running   0          29h
+pod/cilium-operator-7c59b5d8d-jfbp9   1/1     Running   0          29h
+pod/cilium-vsmjn                      1/1     Running   0          29h
+pod/coredns-6b6854dcbf-8fqsx          1/1     Running   0          29h
+pod/coredns-6b6854dcbf-wxb6k          1/1     Running   0          29h
+pod/csi-do-node-bhw2m                 2/2     Running   0          29h
+pod/csi-do-node-stjq6                 2/2     Running   0          29h
+pod/csi-do-node-twtmn                 2/2     Running   0          29h
+pod/do-node-agent-9hczr               1/1     Running   0          29h
+pod/do-node-agent-grl67               1/1     Running   0          29h
+pod/do-node-agent-xgsbs               1/1     Running   0          29h
+pod/kube-proxy-v75b5                  1/1     Running   0          29h
+pod/kube-proxy-vpv7l                  1/1     Running   0          29h
+pod/kube-proxy-zxv89                  1/1     Running   0          29h
+pod/metrics-server-584b5f4754-2k4qj   1/1     Running   0          33s
+NAME                     TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)                  AGE
+service/kube-dns         ClusterIP   10.245.0.10    <none>        53/UDP,53/TCP,9153/TCP   29h
+service/metrics-server   ClusterIP   10.245.8.121   <none>        443/TCP                  32s
+NAME                           DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR                 AGE
+daemonset.apps/cilium          3         3         3       3            3           <none>                        29h
+daemonset.apps/csi-do-node     3         3         3       3            3           <none>                        29h
+daemonset.apps/do-node-agent   3         3         3       3            3           beta.kubernetes.io/os=linux   29h
+daemonset.apps/kube-proxy      3         3         3       3            3           <none>                        29h
+NAME                              READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/cilium-operator   1/1     1            1           29h
+deployment.apps/coredns           2/2     2            2           29h
+deployment.apps/metrics-server    1/1     1            1           33s
+NAME                                        DESIRED   CURRENT   READY   AGE
+replicaset.apps/cilium-operator-7c59b5d8d   1         1         1       29h
+replicaset.apps/coredns-6b6854dcbf          2         2         2       29h
+replicaset.apps/metrics-server-584b5f4754   1         1         1       33s
+NAME                   CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+pool-5ec953s5l-3rri4   56m          2%     1270Mi          40%       
+pool-5ec953s5l-3rrih   45m          2%     986Mi           31%       
+pool-5ec953s5l-3rrii   75m          3%     991Mi           31%       
+NAME                              CPU(cores)   MEMORY(bytes)   
+nwapp-deploy-6b9ccd96cf-5v7cc     0m           14Mi            
+nwapp-deploy-6b9ccd96cf-j8qpw     0m           16Mi            
+nwappv2-deploy-586d9d77d9-2wbgd   0m           22Mi            
+nwappv2-deploy-586d9d77d9-jwthp   0m           22Mi            
+nwdb-deploy-86d6c968bc-k78zp      1m           205Mi           
+NAME                              CPU(cores)   MEMORY(bytes)   
+cilium-6ctjx                      5m           193Mi           
+cilium-mslpt                      4m           186Mi           
+cilium-operator-7c59b5d8d-jfbp9   2m           20Mi            
+cilium-vsmjn                      3m           190Mi           
+coredns-6b6854dcbf-8fqsx          2m           11Mi            
+coredns-6b6854dcbf-wxb6k          2m           10Mi            
+csi-do-node-bhw2m                 1m           14Mi            
+csi-do-node-stjq6                 1m           17Mi            
+csi-do-node-twtmn                 1m           13Mi            
+do-node-agent-9hczr               0m           14Mi            
+do-node-agent-grl67               0m           13Mi            
+do-node-agent-xgsbs               2m           12Mi            
+kube-proxy-v75b5                  1m           15Mi            
+kube-proxy-vpv7l                  1m           19Mi            
+kube-proxy-zxv89                  1m           15Mi            
+metrics-server-584b5f4754-2k4qj   1m           11Mi            
+NAME                                  READY   STATUS        RESTARTS   AGE
+pod/nwapp-deploy-788cc545cf-4xxm5     0/1     Terminating   0          12m
+pod/nwapp-deploy-788cc545cf-7v67h     1/1     Running       0          30s
+pod/nwapp-deploy-788cc545cf-8nvg4     1/1     Running       0          30s
+pod/nwapp-deploy-788cc545cf-hdr94     0/1     Terminating   0          12m
+pod/nwapp-deploy-788cc545cf-v8z4v     0/1     Terminating   0          46s
+pod/nwapp-deploy-788cc545cf-vpggw     0/1     Terminating   0          46s
+pod/nwappv2-deploy-586d9d77d9-2wbgd   1/1     Running       0          40m
+pod/nwappv2-deploy-586d9d77d9-jwthp   1/1     Running       0          40m
+pod/nwdb-deploy-86d6c968bc-k78zp      1/1     Running       0          4h24m
+NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+service/nwapp-svc     ClusterIP   10.245.89.241    <none>        3000/TCP   30s
+service/nwappv2-svc   ClusterIP   10.245.144.193   <none>        3000/TCP   40m
+service/nwdb-svc      ClusterIP   10.245.70.146    <none>        3306/TCP   4h24m
+NAME                             READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nwapp-deploy     2/2     2            2           30s
+deployment.apps/nwappv2-deploy   2/2     2            2           40m
+deployment.apps/nwdb-deploy      1/1     1            1           4h24m
+NAME                                        DESIRED   CURRENT   READY   AGE
+replicaset.apps/nwapp-deploy-788cc545cf     2         2         2       30s
+replicaset.apps/nwappv2-deploy-586d9d77d9   2         2         2       40m
+replicaset.apps/nwdb-deploy-86d6c968bc      1         1         1       4h24m
+NAME                                            REFERENCE                 TARGETS                        MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/nwapp-hpa   Deployment/nwapp-deploy   <unknown>/80%, <unknown>/80%   1         4         0          12s
+NAME                             CLASS    HOSTS                         ADDRESS          PORTS   AGE
+ingress.extensions/nwapp-ing     <none>   nwapp.167.172.5.11.nip.io     188.166.249.56   80      30s
+ingress.extensions/nwappv2-ing   <none>   nwappv2.167.172.5.11.nip.io   188.166.249.56   80      40m
+NAME                                  READY   STATUS    RESTARTS   AGE
+pod/nwapp-deploy-788cc545cf-7v67h     1/1     Running   0          45s
+pod/nwapp-deploy-788cc545cf-8nvg4     1/1     Running   0          45s
+pod/nwappv2-deploy-586d9d77d9-2wbgd   1/1     Running   0          40m
+pod/nwappv2-deploy-586d9d77d9-jwthp   1/1     Running   0          40m
+pod/nwdb-deploy-86d6c968bc-k78zp      1/1     Running   0          4h24m
+NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+service/nwapp-svc     ClusterIP   10.245.89.241    <none>        3000/TCP   45s
+service/nwappv2-svc   ClusterIP   10.245.144.193   <none>        3000/TCP   40m
+service/nwdb-svc      ClusterIP   10.245.70.146    <none>        3306/TCP   4h24m
+NAME                             READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nwapp-deploy     2/2     2            2           45s
+deployment.apps/nwappv2-deploy   2/2     2            2           40m
+deployment.apps/nwdb-deploy      1/1     1            1           4h24m
+NAME                                        DESIRED   CURRENT   READY   AGE
+replicaset.apps/nwapp-deploy-788cc545cf     2         2         2       45s
+replicaset.apps/nwappv2-deploy-586d9d77d9   2         2         2       40m
+replicaset.apps/nwdb-deploy-86d6c968bc      1         1         1       4h24m
+NAME                                            REFERENCE                 TARGETS           MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/nwapp-hpa   Deployment/nwapp-deploy   51%/80%, 5%/80%   1         4         2          27s
+NAME                             CLASS    HOSTS                         ADDRESS          PORTS   AGE
+ingress.extensions/nwapp-ing     <none>   nwapp.167.172.5.11.nip.io     188.166.249.56   80      45s
+ingress.extensions/nwappv2-ing   <none>   nwappv2.167.172.5.11.nip.io   188.166.249.56   80      40m
+NAME                                  READY   STATUS        RESTARTS   AGE
+pod/nwapp-deploy-788cc545cf-7v67h     1/1     Terminating   0          2m52s
+pod/nwapp-deploy-788cc545cf-8nvg4     1/1     Terminating   0          2m52s
+pod/nwapp-deploy-788cc545cf-fdbcm     1/1     Running       0          4s
+pod/nwapp-deploy-788cc545cf-m2c2z     1/1     Running       0          4s
+pod/nwapp-deploy-788cc545cf-njltp     1/1     Terminating   0          32s
+pod/nwapp-deploy-788cc545cf-s9x9p     1/1     Terminating   0          93s
+pod/nwappv2-deploy-586d9d77d9-2wbgd   1/1     Running       0          43m
+pod/nwappv2-deploy-586d9d77d9-jwthp   1/1     Running       0          43m
+pod/nwdb-deploy-86d6c968bc-k78zp      1/1     Running       0          4h26m
+NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+service/nwapp-svc     ClusterIP   10.245.68.118    <none>        3000/TCP   4s
+service/nwappv2-svc   ClusterIP   10.245.144.193   <none>        3000/TCP   43m
+service/nwdb-svc      ClusterIP   10.245.70.146    <none>        3306/TCP   4h26m
+NAME                             READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nwapp-deploy     2/2     2            2           5s
+deployment.apps/nwappv2-deploy   2/2     2            2           43m
+deployment.apps/nwdb-deploy      1/1     1            1           4h26m
+NAME                                        DESIRED   CURRENT   READY   AGE
+replicaset.apps/nwapp-deploy-788cc545cf     2         2         2       5s
+replicaset.apps/nwappv2-deploy-586d9d77d9   2         2         2       43m
+replicaset.apps/nwdb-deploy-86d6c968bc      1         1         1       4h26m
+NAME                                            REFERENCE                 TARGETS                        MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/nwapp-hpa   Deployment/nwapp-deploy   <unknown>/80%, <unknown>/30%   1         4         0          4s
+NAME                             CLASS    HOSTS                         ADDRESS          PORTS   AGE
+ingress.extensions/nwapp-ing     <none>   nwapp.167.172.5.11.nip.io                      80      4s
+ingress.extensions/nwappv2-ing   <none>   nwappv2.167.172.5.11.nip.io   188.166.249.56   80      43m
+NAME                                  READY   STATUS        RESTARTS   AGE
+pod/nwapp-deploy-788cc545cf-7v67h     0/1     Terminating   0          3m3s
+pod/nwapp-deploy-788cc545cf-8nvg4     0/1     Terminating   0          3m3s
+pod/nwapp-deploy-788cc545cf-fdbcm     1/1     Running       0          15s
+pod/nwapp-deploy-788cc545cf-m2c2z     1/1     Running       0          15s
+pod/nwapp-deploy-788cc545cf-njltp     0/1     Terminating   0          43s
+pod/nwapp-deploy-788cc545cf-s9x9p     0/1     Terminating   0          104s
+pod/nwappv2-deploy-586d9d77d9-2wbgd   1/1     Running       0          43m
+pod/nwappv2-deploy-586d9d77d9-jwthp   1/1     Running       0          43m
+pod/nwdb-deploy-86d6c968bc-k78zp      1/1     Running       0          4h27m
+NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+service/nwapp-svc     ClusterIP   10.245.68.118    <none>        3000/TCP   15s
+service/nwappv2-svc   ClusterIP   10.245.144.193   <none>        3000/TCP   43m
+service/nwdb-svc      ClusterIP   10.245.70.146    <none>        3306/TCP   4h27m
+NAME                             READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nwapp-deploy     2/2     2            2           16s
+deployment.apps/nwappv2-deploy   2/2     2            2           43m
+deployment.apps/nwdb-deploy      1/1     1            1           4h27m
+NAME                                        DESIRED   CURRENT   READY   AGE
+replicaset.apps/nwapp-deploy-788cc545cf     2         2         2       16s
+replicaset.apps/nwappv2-deploy-586d9d77d9   2         2         2       43m
+replicaset.apps/nwdb-deploy-86d6c968bc      1         1         1       4h27m
+NAME                                            REFERENCE                 TARGETS                        MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/nwapp-hpa   Deployment/nwapp-deploy   <unknown>/80%, <unknown>/30%   1         4         0          15s
+NAME                             CLASS    HOSTS                         ADDRESS          PORTS   AGE
+ingress.extensions/nwapp-ing     <none>   nwapp.167.172.5.11.nip.io     188.166.249.56   80      15s
+ingress.extensions/nwappv2-ing   <none>   nwappv2.167.172.5.11.nip.io   188.166.249.56   80      43m
+NAME                                  READY   STATUS    RESTARTS   AGE
+pod/nwapp-deploy-788cc545cf-fdbcm     1/1     Running   0          29s
+pod/nwapp-deploy-788cc545cf-m2c2z     1/1     Running   0          29s
+pod/nwappv2-deploy-586d9d77d9-2wbgd   1/1     Running   0          43m
+pod/nwappv2-deploy-586d9d77d9-jwthp   1/1     Running   0          43m
+pod/nwdb-deploy-86d6c968bc-k78zp      1/1     Running   0          4h27m
+NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+service/nwapp-svc     ClusterIP   10.245.68.118    <none>        3000/TCP   29s
+service/nwappv2-svc   ClusterIP   10.245.144.193   <none>        3000/TCP   43m
+service/nwdb-svc      ClusterIP   10.245.70.146    <none>        3306/TCP   4h27m
+NAME                             READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nwapp-deploy     2/2     2            2           30s
+deployment.apps/nwappv2-deploy   2/2     2            2           43m
+deployment.apps/nwdb-deploy      1/1     1            1           4h27m
+NAME                                        DESIRED   CURRENT   READY   AGE
+replicaset.apps/nwapp-deploy-788cc545cf     2         2         2       30s
+replicaset.apps/nwappv2-deploy-586d9d77d9   2         2         2       43m
+replicaset.apps/nwdb-deploy-86d6c968bc      1         1         1       4h27m
+NAME                                            REFERENCE                 TARGETS           MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/nwapp-hpa   Deployment/nwapp-deploy   84%/80%, 0%/30%   1         4         2          29s
+NAME                             CLASS    HOSTS                         ADDRESS          PORTS   AGE
+ingress.extensions/nwapp-ing     <none>   nwapp.167.172.5.11.nip.io     188.166.249.56   80      29s
+ingress.extensions/nwappv2-ing   <none>   nwappv2.167.172.5.11.nip.io   188.166.249.56   80      43m
+NAME                                  READY   STATUS    RESTARTS   AGE
+pod/nwapp-deploy-788cc545cf-fdbcm     1/1     Running   0          43s
+pod/nwapp-deploy-788cc545cf-m2c2z     1/1     Running   0          43s
+pod/nwappv2-deploy-586d9d77d9-2wbgd   1/1     Running   0          43m
+pod/nwappv2-deploy-586d9d77d9-jwthp   1/1     Running   0          43m
+pod/nwdb-deploy-86d6c968bc-k78zp      1/1     Running   0          4h27m
+NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+service/nwapp-svc     ClusterIP   10.245.68.118    <none>        3000/TCP   43s
+service/nwappv2-svc   ClusterIP   10.245.144.193   <none>        3000/TCP   43m
+service/nwdb-svc      ClusterIP   10.245.70.146    <none>        3306/TCP   4h27m
+NAME                             READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nwapp-deploy     2/2     2            2           44s
+deployment.apps/nwappv2-deploy   2/2     2            2           43m
+deployment.apps/nwdb-deploy      1/1     1            1           4h27m
+NAME                                        DESIRED   CURRENT   READY   AGE
+replicaset.apps/nwapp-deploy-788cc545cf     2         2         2       44s
+replicaset.apps/nwappv2-deploy-586d9d77d9   2         2         2       43m
+replicaset.apps/nwdb-deploy-86d6c968bc      1         1         1       4h27m
+NAME                                            REFERENCE                 TARGETS                  MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/nwapp-hpa   Deployment/nwapp-deploy   51%/80%, <unknown>/30%   1         4         2          43s
+NAME                             CLASS    HOSTS                         ADDRESS          PORTS   AGE
+ingress.extensions/nwapp-ing     <none>   nwapp.167.172.5.11.nip.io     188.166.249.56   80      43s
+ingress.extensions/nwappv2-ing   <none>   nwappv2.167.172.5.11.nip.io   188.166.249.56   80      43m
+NAME                                  READY   STATUS    RESTARTS   AGE
+pod/nwapp-deploy-788cc545cf-fdbcm     1/1     Running   0          85s
+pod/nwapp-deploy-788cc545cf-m2c2z     1/1     Running   0          85s
+pod/nwappv2-deploy-586d9d77d9-2wbgd   1/1     Running   0          44m
+pod/nwappv2-deploy-586d9d77d9-jwthp   1/1     Running   0          44m
+pod/nwdb-deploy-86d6c968bc-k78zp      1/1     Running   0          4h28m
+NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+service/nwapp-svc     ClusterIP   10.245.68.118    <none>        3000/TCP   85s
+service/nwappv2-svc   ClusterIP   10.245.144.193   <none>        3000/TCP   44m
+service/nwdb-svc      ClusterIP   10.245.70.146    <none>        3306/TCP   4h28m
+NAME                             READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nwapp-deploy     2/2     2            2           86s
+deployment.apps/nwappv2-deploy   2/2     2            2           44m
+deployment.apps/nwdb-deploy      1/1     1            1           4h28m
+NAME                                        DESIRED   CURRENT   READY   AGE
+replicaset.apps/nwapp-deploy-788cc545cf     2         2         2       86s
+replicaset.apps/nwappv2-deploy-586d9d77d9   2         2         2       44m
+replicaset.apps/nwdb-deploy-86d6c968bc      1         1         1       4h28m
+NAME                                            REFERENCE                 TARGETS                  MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/nwapp-hpa   Deployment/nwapp-deploy   51%/80%, <unknown>/30%   1         4         2          85s
+NAME                             CLASS    HOSTS                         ADDRESS          PORTS   AGE
+ingress.extensions/nwapp-ing     <none>   nwapp.167.172.5.11.nip.io     188.166.249.56   80      85s
+ingress.extensions/nwappv2-ing   <none>   nwappv2.167.172.5.11.nip.io   188.166.249.56   80      44m
+NAME                                  READY   STATUS    RESTARTS   AGE
+pod/nwapp-deploy-788cc545cf-8ffq5     1/1     Running   0          3m13s
+pod/nwapp-deploy-788cc545cf-fdbcm     1/1     Running   0          4m44s
+pod/nwapp-deploy-788cc545cf-m2c2z     1/1     Running   0          4m44s
+pod/nwapp-deploy-788cc545cf-mwqbj     1/1     Running   0          86s
+pod/nwappv2-deploy-586d9d77d9-2wbgd   1/1     Running   0          47m
+pod/nwappv2-deploy-586d9d77d9-jwthp   1/1     Running   0          47m
+pod/nwdb-deploy-86d6c968bc-k78zp      1/1     Running   0          4h31m
+NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+service/nwapp-svc     ClusterIP   10.245.68.118    <none>        3000/TCP   4m44s
+service/nwappv2-svc   ClusterIP   10.245.144.193   <none>        3000/TCP   47m
+service/nwdb-svc      ClusterIP   10.245.70.146    <none>        3306/TCP   4h31m
+NAME                             READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nwapp-deploy     4/4     4            4           4m45s
+deployment.apps/nwappv2-deploy   2/2     2            2           47m
+deployment.apps/nwdb-deploy      1/1     1            1           4h31m
+NAME                                        DESIRED   CURRENT   READY   AGE
+replicaset.apps/nwapp-deploy-788cc545cf     4         4         4       4m45s
+replicaset.apps/nwappv2-deploy-586d9d77d9   2         2         2       47m
+replicaset.apps/nwdb-deploy-86d6c968bc      1         1         1       4h31m
+NAME                                            REFERENCE                 TARGETS           MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/nwapp-hpa   Deployment/nwapp-deploy   91%/80%, 0%/30%   1         4         4          4m44s
+NAME                             CLASS    HOSTS                         ADDRESS          PORTS   AGE
+ingress.extensions/nwapp-ing     <none>   nwapp.167.172.5.11.nip.io     188.166.249.56   80      4m44s
+ingress.extensions/nwappv2-ing   <none>   nwappv2.167.172.5.11.nip.io   188.166.249.56   80      47m
+NAME                               SHORTNAMES     APIGROUP                       NAMESPACED   KIND
+bindings                                                                         true         Binding
+componentstatuses                  cs                                            false        ComponentStatus
+configmaps                         cm                                            true         ConfigMap
+endpoints                          ep                                            true         Endpoints
+events                             ev                                            true         Event
+limitranges                        limits                                        true         LimitRange
+namespaces                         ns                                            false        Namespace
+nodes                              no                                            false        Node
+persistentvolumeclaims             pvc                                           true         PersistentVolumeClaim
+persistentvolumes                  pv                                            false        PersistentVolume
+pods                               po                                            true         Pod
+podtemplates                                                                     true         PodTemplate
+replicationcontrollers             rc                                            true         ReplicationController
+resourcequotas                     quota                                         true         ResourceQuota
+secrets                                                                          true         Secret
+serviceaccounts                    sa                                            true         ServiceAccount
+services                           svc                                           true         Service
+mutatingwebhookconfigurations                     admissionregistration.k8s.io   false        MutatingWebhookConfiguration
+validatingwebhookconfigurations                   admissionregistration.k8s.io   false        ValidatingWebhookConfiguration
+customresourcedefinitions          crd,crds       apiextensions.k8s.io           false        CustomResourceDefinition
+apiservices                                       apiregistration.k8s.io         false        APIService
+controllerrevisions                               apps                           true         ControllerRevision
+daemonsets                         ds             apps                           true         DaemonSet
+deployments                        deploy         apps                           true         Deployment
+replicasets                        rs             apps                           true         ReplicaSet
+statefulsets                       sts            apps                           true         StatefulSet
+tokenreviews                                      authentication.k8s.io          false        TokenReview
+localsubjectaccessreviews                         authorization.k8s.io           true         LocalSubjectAccessReview
+selfsubjectaccessreviews                          authorization.k8s.io           false        SelfSubjectAccessReview
+selfsubjectrulesreviews                           authorization.k8s.io           false        SelfSubjectRulesReview
+subjectaccessreviews                              authorization.k8s.io           false        SubjectAccessReview
+horizontalpodautoscalers           hpa            autoscaling                    true         HorizontalPodAutoscaler
+cronjobs                           cj             batch                          true         CronJob
+jobs                                              batch                          true         Job
+certificatesigningrequests         csr            certificates.k8s.io            false        CertificateSigningRequest
+ciliumclusterwidenetworkpolicies   ccnp           cilium.io                      false        CiliumClusterwideNetworkPolicy
+ciliumendpoints                    cep,ciliumep   cilium.io                      true         CiliumEndpoint
+ciliumnetworkpolicies              cnp,ciliumnp   cilium.io                      true         CiliumNetworkPolicy
+ciliumnodes                        cn,ciliumn     cilium.io                      false        CiliumNode
+leases                                            coordination.k8s.io            true         Lease
+endpointslices                                    discovery.k8s.io               true         EndpointSlice
+events                             ev             events.k8s.io                  true         Event
+ingresses                          ing            extensions                     true         Ingress
+nodes                                             metrics.k8s.io                 false        NodeMetrics
+pods                                              metrics.k8s.io                 true         PodMetrics
+ingressclasses                                    networking.k8s.io              false        IngressClass
+ingresses                          ing            networking.k8s.io              true         Ingress
+networkpolicies                    netpol         networking.k8s.io              true         NetworkPolicy
+runtimeclasses                                    node.k8s.io                    false        RuntimeClass
+poddisruptionbudgets               pdb            policy                         true         PodDisruptionBudget
+podsecuritypolicies                psp            policy                         false        PodSecurityPolicy
+clusterrolebindings                               rbac.authorization.k8s.io      false        ClusterRoleBinding
+clusterroles                                      rbac.authorization.k8s.io      false        ClusterRole
+rolebindings                                      rbac.authorization.k8s.io      true         RoleBinding
+roles                                             rbac.authorization.k8s.io      true         Role
+priorityclasses                    pc             scheduling.k8s.io              false        PriorityClass
+volumesnapshotclasses                             snapshot.storage.k8s.io        false        VolumeSnapshotClass
+volumesnapshotcontents                            snapshot.storage.k8s.io        false        VolumeSnapshotContent
+volumesnapshots                                   snapshot.storage.k8s.io        true         VolumeSnapshot
+csidrivers                                        storage.k8s.io                 false        CSIDriver
+csinodes                                          storage.k8s.io                 false        CSINode
+storageclasses                     sc             storage.k8s.io                 false        StorageClass
+volumeattachments                                 storage.k8s.io                 false        VolumeAttachment
+NAME                               SHORTNAMES     APIGROUP                       NAMESPACED   KIND
+bindings                                                                         true         Binding
+componentstatuses                  cs                                            false        ComponentStatus
+configmaps                         cm                                            true         ConfigMap
+endpoints                          ep                                            true         Endpoints
+events                             ev                                            true         Event
+limitranges                        limits                                        true         LimitRange
+namespaces                         ns                                            false        Namespace
+nodes                              no                                            false        Node
+persistentvolumeclaims             pvc                                           true         PersistentVolumeClaim
+persistentvolumes                  pv                                            false        PersistentVolume
+pods                               po                                            true         Pod
+podtemplates                                                                     true         PodTemplate
+replicationcontrollers             rc                                            true         ReplicationController
+resourcequotas                     quota                                         true         ResourceQuota
+secrets                                                                          true         Secret
+serviceaccounts                    sa                                            true         ServiceAccount
+services                           svc                                           true         Service
+mutatingwebhookconfigurations                     admissionregistration.k8s.io   false        MutatingWebhookConfiguration
+validatingwebhookconfigurations                   admissionregistration.k8s.io   false        ValidatingWebhookConfiguration
+customresourcedefinitions          crd,crds       apiextensions.k8s.io           false        CustomResourceDefinition
+apiservices                                       apiregistration.k8s.io         false        APIService
+controllerrevisions                               apps                           true         ControllerRevision
+daemonsets                         ds             apps                           true         DaemonSet
+deployments                        deploy         apps                           true         Deployment
+replicasets                        rs             apps                           true         ReplicaSet
+statefulsets                       sts            apps                           true         StatefulSet
+tokenreviews                                      authentication.k8s.io          false        TokenReview
+localsubjectaccessreviews                         authorization.k8s.io           true         LocalSubjectAccessReview
+selfsubjectaccessreviews                          authorization.k8s.io           false        SelfSubjectAccessReview
+selfsubjectrulesreviews                           authorization.k8s.io           false        SelfSubjectRulesReview
+subjectaccessreviews                              authorization.k8s.io           false        SubjectAccessReview
+horizontalpodautoscalers           hpa            autoscaling                    true         HorizontalPodAutoscaler
+cronjobs                           cj             batch                          true         CronJob
+jobs                                              batch                          true         Job
+certificatesigningrequests         csr            certificates.k8s.io            false        CertificateSigningRequest
+ciliumclusterwidenetworkpolicies   ccnp           cilium.io                      false        CiliumClusterwideNetworkPolicy
+ciliumendpoints                    cep,ciliumep   cilium.io                      true         CiliumEndpoint
+ciliumnetworkpolicies              cnp,ciliumnp   cilium.io                      true         CiliumNetworkPolicy
+ciliumnodes                        cn,ciliumn     cilium.io                      false        CiliumNode
+leases                                            coordination.k8s.io            true         Lease
+endpointslices                                    discovery.k8s.io               true         EndpointSlice
+events                             ev             events.k8s.io                  true         Event
+ingresses                          ing            extensions                     true         Ingress
+nodes                                             metrics.k8s.io                 false        NodeMetrics
+pods                                              metrics.k8s.io                 true         PodMetrics
+mysqlbackups                                      mysql.presslabs.org            true         MysqlBackup
+mysqlclusters                      mysql          mysql.presslabs.org            true         MysqlCluster
+ingressclasses                                    networking.k8s.io              false        IngressClass
+ingresses                          ing            networking.k8s.io              true         Ingress
+networkpolicies                    netpol         networking.k8s.io              true         NetworkPolicy
+runtimeclasses                                    node.k8s.io                    false        RuntimeClass
+poddisruptionbudgets               pdb            policy                         true         PodDisruptionBudget
+podsecuritypolicies                psp            policy                         false        PodSecurityPolicy
+clusterrolebindings                               rbac.authorization.k8s.io      false        ClusterRoleBinding
+clusterroles                                      rbac.authorization.k8s.io      false        ClusterRole
+rolebindings                                      rbac.authorization.k8s.io      true         RoleBinding
+roles                                             rbac.authorization.k8s.io      true         Role
+priorityclasses                    pc             scheduling.k8s.io              false        PriorityClass
+volumesnapshotclasses                             snapshot.storage.k8s.io        false        VolumeSnapshotClass
+volumesnapshotcontents                            snapshot.storage.k8s.io        false        VolumeSnapshotContent
+volumesnapshots                                   snapshot.storage.k8s.io        true         VolumeSnapshot
+csidrivers                                        storage.k8s.io                 false        CSIDriver
+csinodes                                          storage.k8s.io                 false        CSINode
+storageclasses                     sc             storage.k8s.io                 false        StorageClass
+volumeattachments                                 storage.k8s.io                 false        VolumeAttachment
+NAME                              READY   STATUS    RESTARTS   AGE
+pod/mysql-oper-mysql-operator-0   2/2     Running   0          106s
+NAME                                      TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)            AGE
+service/mysql-oper-mysql-operator         ClusterIP   10.245.71.207    <none>        80/TCP             106s
+service/mysql-oper-mysql-operator-0-svc   ClusterIP   10.245.189.177   <none>        80/TCP,10008/TCP   106s
+NAME                                         READY   AGE
+statefulset.apps/mysql-oper-mysql-operator   1/1     106s
+NAME                                                        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                                             STORAGECLASS       REASON   AGE
+persistentvolume/pvc-4ce43bf9-10fd-420b-a092-2b55835d6a4b   1Gi        RWO            Delete           Bound    mysql-operator/data-mysql-oper-mysql-operator-0   do-block-storage            101s
+persistentvolume/pvc-f843b5d5-8663-4daf-be41-633bbaf7b505   1Gi        RWO            Delete           Bound    wk2/nwdb-pvc                                      do-block-storage            22h
+NAME                                                     STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS       AGE
+persistentvolumeclaim/data-mysql-oper-mysql-operator-0   Bound    pvc-4ce43bf9-10fd-420b-a092-2b55835d6a4b   1Gi        RWO            do-block-storage   106s
+Name:               mysql-oper-mysql-operator-0
+Namespace:          mysql-operator
+Priority:           0
+PriorityClassName:  <none>
+Node:               pool-5ec953s5l-3rrih/10.104.0.3
+Start Time:         Thu, 30 Jul 2020 09:42:03 +0800
+Labels:             app=mysql-operator
+                    controller-revision-hash=mysql-oper-mysql-operator-7bb7bd5fb6
+                    release=mysql-oper
+                    statefulset.kubernetes.io/pod-name=mysql-oper-mysql-operator-0
+Annotations:        checksum/config: c29a0d5526b49ad43fc114d0d64cb76aed55b2551ba1282001c9c7678e77dc04
+                    checksum/secret: b3b8df302b694d00aaed4dd2435f4e123618215eb854c75b76b3af48df871b1c
+Status:             Running
+IP:                 10.244.0.95
+Controlled By:      StatefulSet/mysql-oper-mysql-operator
+Containers:
+  operator:
+    Container ID:  docker://162e849a2875c72a4eac210552f6b49ee6e76244a31a5556bd1045ba262dcaca
+    Image:         quay.io/presslabs/mysql-operator:0.4.0
+    Image ID:      docker-pullable://quay.io/presslabs/mysql-operator@sha256:62d3f4b468ec0d05f9fc34262fec954fe978bcf3c81fef3e94a1ca0c1269b205
+    Port:          <none>
+    Host Port:     <none>
+    Args:
+      --leader-election-namespace=mysql-operator
+      --orchestrator-uri=http://127.0.0.1:3000/api
+      --sidecar-image=quay.io/presslabs/mysql-operator-sidecar:0.4.0
+    State:          Running
+      Started:      Thu, 30 Jul 2020 09:42:27 +0800
+    Ready:          True
+    Restart Count:  0
+    Environment:
+      ORC_TOPOLOGY_USER:      <set to the key 'TOPOLOGY_USER' in secret 'mysql-oper-mysql-operator-orc'>      Optional: false
+      ORC_TOPOLOGY_PASSWORD:  <set to the key 'TOPOLOGY_PASSWORD' in secret 'mysql-oper-mysql-operator-orc'>  Optional: false
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from mysql-oper-mysql-operator-token-dd24d (ro)
+  orchestrator:
+    Container ID:   docker://a58a58e911114227caf5dedcf618f1b6d2c1fd417c36aa7a9c8c226922037584
+    Image:          quay.io/presslabs/mysql-operator-orchestrator:0.4.0
+    Image ID:       docker-pullable://quay.io/presslabs/mysql-operator-orchestrator@sha256:d32a6f89035693f307c75d27eb7c28b17006f604735d8640cb39346a89fdf535
+    Ports:          3000/TCP, 10008/TCP
+    Host Ports:     0/TCP, 0/TCP
+    State:          Running
+      Started:      Thu, 30 Jul 2020 09:42:37 +0800
+    Ready:          True
+    Restart Count:  0
+    Liveness:       http-get http://:3000/api/lb-check delay=200s timeout=10s period=10s #success=1 #failure=3
+    Readiness:      http-get http://:3000/api/raft-health delay=0s timeout=10s period=10s #success=1 #failure=3
+    Environment Variables from:
+      mysql-oper-mysql-operator-orc  Secret with prefix 'ORC_'  Optional: false
+    Environment:
+      POD_IP:   (v1:status.podIP)
+    Mounts:
+      /templates/ from config (rw)
+      /var/lib/orchestrator/ from data (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from mysql-oper-mysql-operator-token-dd24d (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  data:
+    Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
+    ClaimName:  data-mysql-oper-mysql-operator-0
+    ReadOnly:   false
+  config:
+    Type:      ConfigMap (a volume populated by a ConfigMap)
+    Name:      mysql-oper-mysql-operator-orc
+    Optional:  false
+  mysql-oper-mysql-operator-token-dd24d:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  mysql-oper-mysql-operator-token-dd24d
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type     Reason                  Age        From                           Message
+  ----     ------                  ----       ----                           -------
+  Warning  FailedScheduling        <unknown>  default-scheduler              running "VolumeBinding" filter plugin for pod "mysql-oper-mysql-operator-0": pod has unbound immediate PersistentVolumeClaims
+  Warning  FailedScheduling        <unknown>  default-scheduler              running "VolumeBinding" filter plugin for pod "mysql-oper-mysql-operator-0": pod has unbound immediate PersistentVolumeClaims
+  Normal   Scheduled               <unknown>  default-scheduler              Successfully assigned mysql-operator/mysql-oper-mysql-operator-0 to pool-5ec953s5l-3rrih
+  Normal   SuccessfulAttachVolume  4m14s      attachdetach-controller        AttachVolume.Attach succeeded for volume "pvc-4ce43bf9-10fd-420b-a092-2b55835d6a4b"
+  Normal   Pulling                 4m8s       kubelet, pool-5ec953s5l-3rrih  Pulling image "quay.io/presslabs/mysql-operator:0.4.0"
+  Normal   Pulled                  4m1s       kubelet, pool-5ec953s5l-3rrih  Successfully pulled image "quay.io/presslabs/mysql-operator:0.4.0"
+  Normal   Created                 4m1s       kubelet, pool-5ec953s5l-3rrih  Created container operator
+  Normal   Started                 4m1s       kubelet, pool-5ec953s5l-3rrih  Started container operator
+  Normal   Pulling                 4m1s       kubelet, pool-5ec953s5l-3rrih  Pulling image "quay.io/presslabs/mysql-operator-orchestrator:0.4.0"
+  Normal   Pulled                  3m51s      kubelet, pool-5ec953s5l-3rrih  Successfully pulled image "quay.io/presslabs/mysql-operator-orchestrator:0.4.0"
+  Normal   Created                 3m51s      kubelet, pool-5ec953s5l-3rrih  Created container orchestrator
+  Normal   Started                 3m51s      kubelet, pool-5ec953s5l-3rrih  Started container orchestrator
+NAME                        READY   AGE
+mysql-oper-mysql-operator   1/1     9m49s
+{"severity":"INFO","timestamp":"2020-07-30T01:42:27.720694539Z","logger":"mysql-operator","message":"Starting mysql-operator..."}
+{"severity":"INFO","timestamp":"2020-07-30T01:42:27.79379458Z","logger":"kubebuilder.controller","message":"Starting EventSource","controller":"mysqlbackup-controller","source":"kind source: /, Kind="}
+{"severity":"INFO","timestamp":"2020-07-30T01:42:27.794093093Z","logger":"kubebuilder.controller","message":"Starting EventSource","controller":"mysqlbackup-controller","source":"kind source: /, Kind="}
+{"severity":"INFO","timestamp":"2020-07-30T01:42:27.79427299Z","logger":"kubebuilder.controller","message":"Starting EventSource","controller":"mysqlbackupcron-controller","source":"kind source: /, Kind="}
+{"severity":"INFO","timestamp":"2020-07-30T01:42:27.794427747Z","logger":"kubebuilder.controller","message":"Starting EventSource","controller":"controller.mysqlcluster","source":"kind source: /, Kind="}
+{"severity":"INFO","timestamp":"2020-07-30T01:42:27.794483577Z","logger":"kubebuilder.controller","message":"Starting EventSource","controller":"controller.mysqlcluster","source":"kind source: /, Kind="}
+{"severity":"INFO","timestamp":"2020-07-30T01:42:27.794580814Z","logger":"kubebuilder.controller","message":"Starting EventSource","controller":"controller.mysqlcluster","source":"kind source: /, Kind="}
+{"severity":"INFO","timestamp":"2020-07-30T01:42:27.794688827Z","logger":"kubebuilder.controller","message":"Starting EventSource","controller":"controller.mysqlcluster","source":"kind source: /, Kind="}
+{"severity":"INFO","timestamp":"2020-07-30T01:42:27.794836781Z","logger":"kubebuilder.controller","message":"Starting EventSource","controller":"controller.mysqlcluster","source":"kind source: /, Kind="}
+{"severity":"INFO","timestamp":"2020-07-30T01:42:27.79497039Z","logger":"kubebuilder.controller","message":"Starting EventSource","controller":"controller.mysqlcluster","source":"kind source: /, Kind="}
+{"severity":"INFO","timestamp":"2020-07-30T01:42:27.860243708Z","logger":"kubebuilder.controller","message":"Starting EventSource","controller":"controller.mysqlNode","source":"kind source: /, Kind="}
+{"severity":"INFO","timestamp":"2020-07-30T01:42:27.860534059Z","logger":"kubebuilder.controller","message":"Starting EventSource","controller":"controller.orchestrator","source":"kind source: /, Kind="}
+{"severity":"INFO","timestamp":"2020-07-30T01:42:27.860618812Z","logger":"kubebuilder.controller","message":"Starting EventSource","controller":"controller.orchestrator","source":"channel source: 0xc0000bd2c0"}
+I0730 01:42:27.860848       1 leaderelection.go:205] attempting to acquire leader lease  mysql-operator/mysql-operator-leader-election...
+I0730 01:42:27.875675       1 leaderelection.go:214] successfully acquired lease mysql-operator/mysql-operator-leader-election
+{"severity":"INFO","timestamp":"2020-07-30T01:42:28.076256971Z","logger":"kubebuilder.controller","message":"Starting Controller","controller":"mysqlbackup-controller"}
+{"severity":"INFO","timestamp":"2020-07-30T01:42:28.076312689Z","logger":"kubebuilder.controller","message":"Starting Controller","controller":"mysqlbackupcron-controller"}
+{"severity":"INFO","timestamp":"2020-07-30T01:42:28.076460669Z","logger":"kubebuilder.controller","message":"Starting Controller","controller":"controller.mysqlNode"}
+{"severity":"INFO","timestamp":"2020-07-30T01:42:28.076507085Z","logger":"kubebuilder.controller","message":"Starting Controller","controller":"controller.orchestrator"}
+{"severity":"INFO","timestamp":"2020-07-30T01:42:28.076355303Z","logger":"kubebuilder.controller","message":"Starting Controller","controller":"controller.mysqlcluster"}
+{"severity":"INFO","timestamp":"2020-07-30T01:42:28.176566412Z","logger":"kubebuilder.controller","message":"Starting workers","controller":"mysqlbackup-controller","worker count":1}
+{"severity":"INFO","timestamp":"2020-07-30T01:42:28.176659411Z","logger":"kubebuilder.controller","message":"Starting workers","controller":"mysqlbackupcron-controller","worker count":1}
+{"severity":"INFO","timestamp":"2020-07-30T01:42:28.176826994Z","logger":"kubebuilder.controller","message":"Starting workers","controller":"controller.mysqlcluster","worker count":1}
+{"severity":"INFO","timestamp":"2020-07-30T01:42:28.176566599Z","logger":"kubebuilder.controller","message":"Starting workers","controller":"controller.mysqlNode","worker count":1}
+{"severity":"INFO","timestamp":"2020-07-30T01:42:28.176910094Z","logger":"kubebuilder.controller","message":"Starting workers","controller":"controller.orchestrator","worker count":10}
+mysqlbackups                                      mysql.presslabs.org            true         MysqlBackup
+mysqlclusters                      mysql          mysql.presslabs.org            true         MysqlCluster

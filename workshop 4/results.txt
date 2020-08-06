@@ -1,0 +1,1667 @@
+NAME                       READY   STATUS     RESTARTS   AGE
+pod/nwdb-cluster-mysql-0   4/4     Running    0          2m10s
+pod/nwdb-cluster-mysql-1   0/4     Init:1/2   0          35s
+NAME                                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)             AGE
+service/mysql                         ClusterIP   None             <none>        3306/TCP,9125/TCP   2m10s
+service/nwdb-cluster-mysql            ClusterIP   10.245.215.150   <none>        3306/TCP            2m10s
+service/nwdb-cluster-mysql-master     ClusterIP   10.245.189.158   <none>        3306/TCP,8080/TCP   2m10s
+service/nwdb-cluster-mysql-replicas   ClusterIP   10.245.44.30     <none>        3306/TCP,8080/TCP   2m10s
+NAME                                  READY   AGE
+statefulset.apps/nwdb-cluster-mysql   1/2     2m10s
+NAME                                                        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                                             STORAGECLASS       REASON   AGE
+persistentvolume/pvc-4ce43bf9-10fd-420b-a092-2b55835d6a4b   1Gi        RWO            Delete           Bound    mysql-operator/data-mysql-oper-mysql-operator-0   do-block-storage            73m
+persistentvolume/pvc-f843b5d5-8663-4daf-be41-633bbaf7b505   1Gi        RWO            Delete           Bound    wk2/nwdb-pvc                                      do-block-storage            23h
+NAME                       READY   STATUS    RESTARTS   AGE
+pod/nwdb-cluster-mysql-0   4/4     Running   0          2m39s
+pod/nwdb-cluster-mysql-1   3/4     Running   0          64s
+NAME                                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)             AGE
+service/mysql                         ClusterIP   None             <none>        3306/TCP,9125/TCP   2m39s
+service/nwdb-cluster-mysql            ClusterIP   10.245.215.150   <none>        3306/TCP            2m39s
+service/nwdb-cluster-mysql-master     ClusterIP   10.245.189.158   <none>        3306/TCP,8080/TCP   2m39s
+service/nwdb-cluster-mysql-replicas   ClusterIP   10.245.44.30     <none>        3306/TCP,8080/TCP   2m39s
+NAME                                  READY   AGE
+statefulset.apps/nwdb-cluster-mysql   1/2     2m39s
+NAME                                                        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                                             STORAGECLASS       REASON   AGE
+persistentvolume/pvc-4ce43bf9-10fd-420b-a092-2b55835d6a4b   1Gi        RWO            Delete           Bound    mysql-operator/data-mysql-oper-mysql-operator-0   do-block-storage            74m
+persistentvolume/pvc-f843b5d5-8663-4daf-be41-633bbaf7b505   1Gi        RWO            Delete           Bound    wk2/nwdb-pvc                                      do-block-storage            23h
+NAME                       READY   STATUS    RESTARTS   AGE
+pod/nwdb-cluster-mysql-0   4/4     Running   0          3m22s
+pod/nwdb-cluster-mysql-1   4/4     Running   0          107s
+NAME                                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)             AGE
+service/mysql                         ClusterIP   None             <none>        3306/TCP,9125/TCP   3m22s
+            ClusterIP   10.245.215.150   <none>        3306/TCP            3m22s
+service/nwdb-cluster-mysql-master     ClusterIP   10.245.189.158   <none>        3306/TCP,8080/TCP   3m22s
+service/nwdb-cluster-mysql-replicas   ClusterIP   10.245.44.30     <none>        3306/TCP,8080/TCP   3m22s
+NAME                                  READY   AGE
+statefulset.apps/nwdb-cluster-mysql   2/2     3m22s
+NAME                                                        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                                             STORAGECLASS       REASON   AGE
+persistentvolume/pvc-4ce43bf9-10fd-420b-a092-2b55835d6a4b   1Gi        RWO            Delete           Bound    mysql-operator/data-mysql-oper-mysql-operator-0   do-block-storage            74m
+persistentvolume/pvc-f843b5d5-8663-4daf-be41-633bbaf7b505   1Gi        RWO            Delete           Bound    wk2/nwdb-pvc                                      do-block-storage            23h
+Name:              nwdb-cluster-mysql
+Namespace:         wk4
+Labels:            app.kubernetes.io/component=database
+                   app.kubernetes.io/instance=nwdb-cluster
+                   app.kubernetes.io/managed-by=mysql.presslabs.org
+                   app.kubernetes.io/name=mysql
+                   app.kubernetes.io/version=5.7.26
+                   mysql.presslabs.org/cluster=nwdb-cluster
+                   mysql.presslabs.org/service-type=ready-nodes
+Annotations:       <none>
+Selector:          app.kubernetes.io/managed-by=mysql.presslabs.org,app.kubernetes.io/name=mysql,healthy=yes,mysql.presslabs.org/cluster=nwdb-cluster
+Type:              ClusterIP
+IP:                10.245.215.150
+Port:              mysql  3306/TCP
+TargetPort:        3306/TCP
+Endpoints:         10.244.0.143:3306,10.244.1.45:3306
+Session Affinity:  None
+Events:            <none>
+NAME                          TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)             AGE     SELECTOR
+mysql                         ClusterIP   None             <none>        3306/TCP,9125/TCP   6m10s   app.kubernetes.io/managed-by=mysql.presslabs.org,app.kubernetes.io/name=mysql
+nwdb-cluster-mysql            ClusterIP   10.245.215.150   <none>        3306/TCP            6m10s   app.kubernetes.io/managed-by=mysql.presslabs.org,app.kubernetes.io/name=mysql,healthy=yes,mysql.presslabs.org/cluster=nwdb-cluster
+nwdb-cluster-mysql-master     ClusterIP   10.245.189.158   <none>        3306/TCP,8080/TCP   6m10s   app.kubernetes.io/managed-by=mysql.presslabs.org,app.kubernetes.io/name=mysql,mysql.presslabs.org/cluster=nwdb-cluster,role=master
+nwdb-cluster-mysql-replicas   ClusterIP   10.245.44.30     <none>        3306/TCP,8080/TCP   6m10s   app.kubernetes.io/managed-by=mysql.presslabs.org,app.kubernetes.io/name=mysql,healthy=yes,mysql.presslabs.org/cluster=nwdb-cluster,role=replica
+NAME                                READY   STATUS    RESTARTS   AGE
+pod/nwapp-deploy-5bb79787b5-c5dcf   1/1     Running   0          4m34s
+pod/nwapp-deploy-5bb79787b5-c9kkl   1/1     Running   0          6m50s
+pod/nwapp-deploy-5bb79787b5-fw8hh   1/1     Running   0          6m50s
+pod/nwapp-deploy-5bb79787b5-jfcmn   1/1     Running   0          5m35s
+pod/nwdb-cluster-mysql-0            4/4     Running   0          72m
+pod/nwdb-cluster-mysql-1            4/4     Running   0          70m
+
+NAME                                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)             AGE
+service/mysql                         ClusterIP   None             <none>        3306/TCP,9125/TCP   72m
+service/nwapp-svc                     ClusterIP   10.245.79.120    <none>        3000/TCP            6m50s
+service/nwdb-cluster-mysql            ClusterIP   10.245.215.150   <none>        3306/TCP            72m
+service/nwdb-cluster-mysql-master     ClusterIP   10.245.189.158   <none>        3306/TCP,8080/TCP   72m
+service/nwdb-cluster-mysql-replicas   ClusterIP   10.245.44.30     <none>        3306/TCP,8080/TCP   72m
+
+NAME                           READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nwapp-deploy   4/4     4            4           6m50s
+
+NAME                                      DESIRED   CURRENT   READY   AGE
+replicaset.apps/nwapp-deploy-5bb79787b5   4         4         4       6m50s
+
+NAME                                  READY   AGE
+statefulset.apps/nwdb-cluster-mysql   2/2     72m
+
+NAME                                            REFERENCE                 TARGETS           MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/nwapp-hpa   Deployment/nwapp-deploy   88%/80%, 0%/30%   1         4         4          6m50s
+
+NAME                                                        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                                             STORAGECLASS       REASON   AGE
+persistentvolume/pvc-4ce43bf9-10fd-420b-a092-2b55835d6a4b   1Gi        RWO            Delete           Bound    mysql-operator/data-mysql-oper-mysql-operator-0   do-block-storage            143m
+persistentvolume/pvc-f843b5d5-8663-4daf-be41-633bbaf7b505   1Gi        RWO            Delete           Bound    wk2/nwdb-pvc                                      do-block-storage            25h
+istio-system     istio-ingressgateway                      LoadBalancer   10.245.14.165    <pending>      15021:32295/TCP,80:32241/TCP,443:31167/TCP,31400:32726/TCP,15443:31846/TCP   104s
+nginx-ingress    nwingress-nginx-ingress-controller        LoadBalancer   10.245.43.162    167.172.5.11   80:31789/TCP,443:30548/TCP                                                   25h
+NAME                                        READY   STATUS    RESTARTS   AGE
+pod/grafana-b54bb57b9-66vgv                 1/1     Running   0          2m4s
+pod/istio-egressgateway-6d86576bf5-8cshs    1/1     Running   0          2m6s
+pod/istio-ingressgateway-85bd66f768-vpjjc   1/1     Running   0          2m6s
+pod/istio-tracing-9dd6c4f7c-t4dqc           1/1     Running   0          2m4s
+pod/istiod-56f98bbd86-6th66                 1/1     Running   0          2m19s
+pod/kiali-d45468dc4-592wk                   1/1     Running   0          2m3s
+pod/prometheus-7f8bcb8c84-trq4k             2/2     Running   0          2m3s
+
+NAME                                TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)                                                                      AGE
+service/grafana                     ClusterIP      10.245.142.98    <none>        3000/TCP                                                                     2m3s
+service/istio-egressgateway         ClusterIP      10.245.149.247   <none>        80/TCP,443/TCP,15443/TCP                                                     2m5s
+service/istio-ingressgateway        LoadBalancer   10.245.14.165    <pending>     15021:32295/TCP,80:32241/TCP,443:31167/TCP,31400:32726/TCP,15443:31846/TCP   2m5s
+service/istiod                      ClusterIP      10.245.174.55    <none>        15010/TCP,15012/TCP,443/TCP,15014/TCP,853/TCP                                2m19s
+service/jaeger-agent                ClusterIP      None             <none>        5775/UDP,6831/UDP,6832/UDP                                                   2m3s
+service/jaeger-collector            ClusterIP      10.245.255.199   <none>        14267/TCP,14268/TCP,14250/TCP                                                2m2s
+service/jaeger-collector-headless   ClusterIP      None             <none>        14250/TCP                                                                    2m2s
+service/jaeger-query                ClusterIP      10.245.245.110   <none>        16686/TCP                                                                    2m2s
+service/kiali                       ClusterIP      10.245.184.44    <none>        20001/TCP                                                                    2m2s
+service/prometheus                  ClusterIP      10.245.117.32    <none>        9090/TCP                                                                     2m2s
+service/tracing                     ClusterIP      10.245.117.50    <none>        80/TCP                                                                       2m2s
+service/zipkin                      ClusterIP      10.245.156.213   <none>        9411/TCP                                                                     2m1s
+
+NAME                                   READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/grafana                1/1     1            1           2m4s
+deployment.apps/istio-egressgateway    1/1     1            1           2m6s
+deployment.apps/istio-ingressgateway   1/1     1            1           2m6s
+deployment.apps/istio-tracing          1/1     1            1           2m4s
+deployment.apps/istiod                 1/1     1            1           2m20s
+deployment.apps/kiali                  1/1     1            1           2m4s
+deployment.apps/prometheus             1/1     1            1           2m3s
+
+NAME                                              DESIRED   CURRENT   READY   AGE
+replicaset.apps/grafana-b54bb57b9                 1         1         1       2m5s
+replicaset.apps/istio-egressgateway-6d86576bf5    1         1         1       2m7s
+replicaset.apps/istio-ingressgateway-85bd66f768   1         1         1       2m7s
+replicaset.apps/istio-tracing-9dd6c4f7c           1         1         1       2m5s
+replicaset.apps/istiod-56f98bbd86                 1         1         1       2m21s
+replicaset.apps/kiali-d45468dc4                   1         1         1       2m4s
+replicaset.apps/prometheus-7f8bcb8c84             1         1         1       2m4s
+NAME              STATUS   AGE     ISTIO-INJECTION
+default           Active   2d3h    
+fortune-ns        Active   2d1h    
+istio-system      Active   8m35s   disabled
+kube-node-lease   Active   2d3h    
+kube-public       Active   2d3h    
+kube-system       Active   2d3h    disabled
+mysql-operator    Active   4h7m    
+nginx-ingress     Active   25h     
+wk2               Active   47h     
+wk3               Active   27h     
+wk4               Active   3h20m   
+# Copyright 2017 Istio Authors
+#
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+
+##################################################################################################
+# This file defines the services, service accounts, and deployments for the Bookinfo sample.
+#
+# To apply all 4 Bookinfo services, their corresponding service accounts, and deployments:
+#
+#   kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
+#
+# Alternatively, you can deploy any resource separately:
+#
+#   kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml -l service=reviews # reviews Service
+#   kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml -l account=reviews # reviews ServiceAccount
+#   kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml -l app=reviews,version=v3 # reviews-v3 Deployment
+##################################################################################################
+
+##################################################################################################
+# Details service
+##################################################################################################
+apiVersion: v1
+kind: Service
+metadata:
+  name: details
+  labels:
+    app: details
+    service: details
+spec:
+  ports:
+  - port: 9080
+    name: http
+  selector:
+    app: details
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: bookinfo-details
+  labels:
+    account: details
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: details
+    version: v1
+  name: details-v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: details
+      version: v1
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/interceptionMode: REDIRECT
+        sidecar.istio.io/status: '{"version":"ed4e6e8ed4ffa03fe7d5b9d2c27cc8c478625ade64be2859cae3da0db9e5ee2e","initContainers":["istio-init"],"containers":["istio-proxy"],"volumes":["istio-envoy","istio-data","istio-podinfo","istio-token","istiod-ca-cert"],"imagePullSecrets":null}'
+        traffic.sidecar.istio.io/excludeInboundPorts: "15020"
+        traffic.sidecar.istio.io/includeInboundPorts: "9080"
+        traffic.sidecar.istio.io/includeOutboundIPRanges: '*'
+      creationTimestamp: null
+      labels:
+        app: details
+        istio.io/rev: ""
+        security.istio.io/tlsMode: istio
+        version: v1
+    spec:
+      containers:
+      - image: docker.io/istio/examples-bookinfo-details-v1:1.15.0
+        imagePullPolicy: IfNotPresent
+        name: details
+        ports:
+        - containerPort: 9080
+        resources: {}
+      - args:
+        - proxy
+        - sidecar
+        - --domain
+        - $(POD_NAMESPACE).svc.cluster.local
+        - --serviceCluster
+        - details.$(POD_NAMESPACE)
+        - --proxyLogLevel=warning
+        - --proxyComponentLogLevel=misc:error
+        - --trust-domain=cluster.local
+        - --concurrency
+        - "2"
+        env:
+        - name: JWT_POLICY
+          value: third-party-jwt
+        - name: PILOT_CERT_PROVIDER
+          value: istiod
+        - name: CA_ADDR
+          value: istiod.istio-system.svc:15012
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: INSTANCE_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: SERVICE_ACCOUNT
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.serviceAccountName
+        - name: HOST_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: CANONICAL_SERVICE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['service.istio.io/canonical-name']
+        - name: CANONICAL_REVISION
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['service.istio.io/canonical-revision']
+        - name: PROXY_CONFIG
+          value: |
+            {"proxyMetadata":{"DNS_AGENT":""}}
+        - name: ISTIO_META_POD_PORTS
+          value: |-
+            [
+                {"containerPort":9080}
+            ]
+        - name: ISTIO_META_APP_CONTAINERS
+          value: |-
+            [
+                details
+            ]
+        - name: ISTIO_META_CLUSTER_ID
+          value: Kubernetes
+        - name: ISTIO_META_INTERCEPTION_MODE
+          value: REDIRECT
+        - name: ISTIO_META_WORKLOAD_NAME
+          value: details-v1
+        - name: ISTIO_META_OWNER
+          value: kubernetes://apis/apps/v1/namespaces/default/deployments/details-v1
+        - name: ISTIO_META_MESH_ID
+          value: cluster.local
+        - name: DNS_AGENT
+        - name: ISTIO_KUBE_APP_PROBERS
+          value: '{}'
+        image: docker.io/istio/proxyv2:1.6.6
+        imagePullPolicy: Always
+        name: istio-proxy
+        ports:
+        - containerPort: 15090
+          name: http-envoy-prom
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 30
+          httpGet:
+            path: /healthz/ready
+            port: 15021
+          initialDelaySeconds: 1
+          periodSeconds: 2
+        resources:
+          limits:
+            cpu: "2"
+            memory: 1Gi
+          requests:
+            cpu: 10m
+            memory: 40Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          privileged: false
+          readOnlyRootFilesystem: true
+          runAsGroup: 1337
+          runAsNonRoot: true
+          runAsUser: 1337
+        volumeMounts:
+        - mountPath: /var/run/secrets/istio
+          name: istiod-ca-cert
+        - mountPath: /var/lib/istio/data
+          name: istio-data
+        - mountPath: /etc/istio/proxy
+          name: istio-envoy
+        - mountPath: /var/run/secrets/tokens
+          name: istio-token
+        - mountPath: /etc/istio/pod
+          name: istio-podinfo
+      initContainers:
+      - args:
+        - istio-iptables
+        - -p
+        - "15001"
+        - -z
+        - "15006"
+        - -u
+        - "1337"
+        - -m
+        - REDIRECT
+        - -i
+        - '*'
+        - -x
+        - ""
+        - -b
+        - '*'
+        - -d
+        - 15090,15021,15020
+        env:
+        - name: DNS_AGENT
+        image: docker.io/istio/proxyv2:1.6.6
+        imagePullPolicy: Always
+        name: istio-init
+        resources:
+          limits:
+            cpu: 100m
+            memory: 50Mi
+          requests:
+            cpu: 10m
+            memory: 10Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            add:
+            - NET_ADMIN
+            - NET_RAW
+            drop:
+            - ALL
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsGroup: 0
+          runAsNonRoot: false
+          runAsUser: 0
+      securityContext:
+        fsGroup: 1337
+      serviceAccountName: bookinfo-details
+      volumes:
+      - emptyDir:
+          medium: Memory
+        name: istio-envoy
+      - emptyDir: {}
+        name: istio-data
+      - downwardAPI:
+          items:
+          - fieldRef:
+              fieldPath: metadata.labels
+            path: labels
+          - fieldRef:
+              fieldPath: metadata.annotations
+            path: annotations
+        name: istio-podinfo
+      - name: istio-token
+        projected:
+          sources:
+          - serviceAccountToken:
+              audience: istio-ca
+              expirationSeconds: 43200
+              path: istio-token
+      - configMap:
+          name: istio-ca-root-cert
+        name: istiod-ca-cert
+status: {}
+---
+##################################################################################################
+# Ratings service
+##################################################################################################
+apiVersion: v1
+kind: Service
+metadata:
+  name: ratings
+  labels:
+    app: ratings
+    service: ratings
+spec:
+  ports:
+  - port: 9080
+    name: http
+  selector:
+    app: ratings
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: bookinfo-ratings
+  labels:
+    account: ratings
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ratings
+    version: v1
+  name: ratings-v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ratings
+      version: v1
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/interceptionMode: REDIRECT
+        sidecar.istio.io/status: '{"version":"ed4e6e8ed4ffa03fe7d5b9d2c27cc8c478625ade64be2859cae3da0db9e5ee2e","initContainers":["istio-init"],"containers":["istio-proxy"],"volumes":["istio-envoy","istio-data","istio-podinfo","istio-token","istiod-ca-cert"],"imagePullSecrets":null}'
+        traffic.sidecar.istio.io/excludeInboundPorts: "15020"
+        traffic.sidecar.istio.io/includeInboundPorts: "9080"
+        traffic.sidecar.istio.io/includeOutboundIPRanges: '*'
+      creationTimestamp: null
+      labels:
+        app: ratings
+        istio.io/rev: ""
+        security.istio.io/tlsMode: istio
+        version: v1
+    spec:
+      containers:
+      - image: docker.io/istio/examples-bookinfo-ratings-v1:1.15.0
+        imagePullPolicy: IfNotPresent
+        name: ratings
+        ports:
+        - containerPort: 9080
+        resources: {}
+      - args:
+        - proxy
+        - sidecar
+        - --domain
+        - $(POD_NAMESPACE).svc.cluster.local
+        - --serviceCluster
+        - ratings.$(POD_NAMESPACE)
+        - --proxyLogLevel=warning
+        - --proxyComponentLogLevel=misc:error
+        - --trust-domain=cluster.local
+        - --concurrency
+        - "2"
+        env:
+        - name: JWT_POLICY
+          value: third-party-jwt
+        - name: PILOT_CERT_PROVIDER
+          value: istiod
+        - name: CA_ADDR
+          value: istiod.istio-system.svc:15012
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: INSTANCE_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: SERVICE_ACCOUNT
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.serviceAccountName
+        - name: HOST_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: CANONICAL_SERVICE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['service.istio.io/canonical-name']
+        - name: CANONICAL_REVISION
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['service.istio.io/canonical-revision']
+        - name: PROXY_CONFIG
+          value: |
+            {"proxyMetadata":{"DNS_AGENT":""}}
+        - name: ISTIO_META_POD_PORTS
+          value: |-
+            [
+                {"containerPort":9080}
+            ]
+        - name: ISTIO_META_APP_CONTAINERS
+          value: |-
+            [
+                ratings
+            ]
+        - name: ISTIO_META_CLUSTER_ID
+          value: Kubernetes
+        - name: ISTIO_META_INTERCEPTION_MODE
+          value: REDIRECT
+        - name: ISTIO_META_WORKLOAD_NAME
+          value: ratings-v1
+        - name: ISTIO_META_OWNER
+          value: kubernetes://apis/apps/v1/namespaces/default/deployments/ratings-v1
+        - name: ISTIO_META_MESH_ID
+          value: cluster.local
+        - name: DNS_AGENT
+        - name: ISTIO_KUBE_APP_PROBERS
+          value: '{}'
+        image: docker.io/istio/proxyv2:1.6.6
+        imagePullPolicy: Always
+        name: istio-proxy
+        ports:
+        - containerPort: 15090
+          name: http-envoy-prom
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 30
+          httpGet:
+            path: /healthz/ready
+            port: 15021
+          initialDelaySeconds: 1
+          periodSeconds: 2
+        resources:
+          limits:
+            cpu: "2"
+            memory: 1Gi
+          requests:
+            cpu: 10m
+            memory: 40Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          privileged: false
+          readOnlyRootFilesystem: true
+          runAsGroup: 1337
+          runAsNonRoot: true
+          runAsUser: 1337
+        volumeMounts:
+        - mountPath: /var/run/secrets/istio
+          name: istiod-ca-cert
+        - mountPath: /var/lib/istio/data
+          name: istio-data
+        - mountPath: /etc/istio/proxy
+          name: istio-envoy
+        - mountPath: /var/run/secrets/tokens
+          name: istio-token
+        - mountPath: /etc/istio/pod
+          name: istio-podinfo
+      initContainers:
+      - args:
+        - istio-iptables
+        - -p
+        - "15001"
+        - -z
+        - "15006"
+        - -u
+        - "1337"
+        - -m
+        - REDIRECT
+        - -i
+        - '*'
+        - -x
+        - ""
+        - -b
+        - '*'
+        - -d
+        - 15090,15021,15020
+        env:
+        - name: DNS_AGENT
+        image: docker.io/istio/proxyv2:1.6.6
+        imagePullPolicy: Always
+        name: istio-init
+        resources:
+          limits:
+            cpu: 100m
+            memory: 50Mi
+          requests:
+            cpu: 10m
+            memory: 10Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            add:
+            - NET_ADMIN
+            - NET_RAW
+            drop:
+            - ALL
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsGroup: 0
+          runAsNonRoot: false
+          runAsUser: 0
+      securityContext:
+        fsGroup: 1337
+      serviceAccountName: bookinfo-ratings
+      volumes:
+      - emptyDir:
+          medium: Memory
+        name: istio-envoy
+      - emptyDir: {}
+        name: istio-data
+      - downwardAPI:
+          items:
+          - fieldRef:
+              fieldPath: metadata.labels
+            path: labels
+          - fieldRef:
+              fieldPath: metadata.annotations
+            path: annotations
+        name: istio-podinfo
+      - name: istio-token
+        projected:
+          sources:
+          - serviceAccountToken:
+              audience: istio-ca
+              expirationSeconds: 43200
+              path: istio-token
+      - configMap:
+          name: istio-ca-root-cert
+        name: istiod-ca-cert
+status: {}
+---
+##################################################################################################
+# Reviews service
+##################################################################################################
+apiVersion: v1
+kind: Service
+metadata:
+  name: reviews
+  labels:
+    app: reviews
+    service: reviews
+spec:
+  ports:
+  - port: 9080
+    name: http
+  selector:
+    app: reviews
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: bookinfo-reviews
+  labels:
+    account: reviews
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: reviews
+    version: v1
+  name: reviews-v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reviews
+      version: v1
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/interceptionMode: REDIRECT
+        sidecar.istio.io/status: '{"version":"ed4e6e8ed4ffa03fe7d5b9d2c27cc8c478625ade64be2859cae3da0db9e5ee2e","initContainers":["istio-init"],"containers":["istio-proxy"],"volumes":["istio-envoy","istio-data","istio-podinfo","istio-token","istiod-ca-cert"],"imagePullSecrets":null}'
+        traffic.sidecar.istio.io/excludeInboundPorts: "15020"
+        traffic.sidecar.istio.io/includeInboundPorts: "9080"
+        traffic.sidecar.istio.io/includeOutboundIPRanges: '*'
+      creationTimestamp: null
+      labels:
+        app: reviews
+        istio.io/rev: ""
+        security.istio.io/tlsMode: istio
+        version: v1
+    spec:
+      containers:
+      - env:
+        - name: LOG_DIR
+          value: /tmp/logs
+        image: docker.io/istio/examples-bookinfo-reviews-v1:1.15.0
+        imagePullPolicy: IfNotPresent
+        name: reviews
+        ports:
+        - containerPort: 9080
+        resources: {}
+        volumeMounts:
+        - mountPath: /tmp
+          name: tmp
+        - mountPath: /opt/ibm/wlp/output
+          name: wlp-output
+      - args:
+        - proxy
+        - sidecar
+        - --domain
+        - $(POD_NAMESPACE).svc.cluster.local
+        - --serviceCluster
+        - reviews.$(POD_NAMESPACE)
+        - --proxyLogLevel=warning
+        - --proxyComponentLogLevel=misc:error
+        - --trust-domain=cluster.local
+        - --concurrency
+        - "2"
+        env:
+        - name: JWT_POLICY
+          value: third-party-jwt
+        - name: PILOT_CERT_PROVIDER
+          value: istiod
+        - name: CA_ADDR
+          value: istiod.istio-system.svc:15012
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: INSTANCE_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: SERVICE_ACCOUNT
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.serviceAccountName
+        - name: HOST_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: CANONICAL_SERVICE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['service.istio.io/canonical-name']
+        - name: CANONICAL_REVISION
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['service.istio.io/canonical-revision']
+        - name: PROXY_CONFIG
+          value: |
+            {"proxyMetadata":{"DNS_AGENT":""}}
+        - name: ISTIO_META_POD_PORTS
+          value: |-
+            [
+                {"containerPort":9080}
+            ]
+        - name: ISTIO_META_APP_CONTAINERS
+          value: |-
+            [
+                reviews
+            ]
+        - name: ISTIO_META_CLUSTER_ID
+          value: Kubernetes
+        - name: ISTIO_META_INTERCEPTION_MODE
+          value: REDIRECT
+        - name: ISTIO_META_WORKLOAD_NAME
+          value: reviews-v1
+        - name: ISTIO_META_OWNER
+          value: kubernetes://apis/apps/v1/namespaces/default/deployments/reviews-v1
+        - name: ISTIO_META_MESH_ID
+          value: cluster.local
+        - name: DNS_AGENT
+        - name: ISTIO_KUBE_APP_PROBERS
+          value: '{}'
+        image: docker.io/istio/proxyv2:1.6.6
+        imagePullPolicy: Always
+        name: istio-proxy
+        ports:
+        - containerPort: 15090
+          name: http-envoy-prom
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 30
+          httpGet:
+            path: /healthz/ready
+            port: 15021
+          initialDelaySeconds: 1
+          periodSeconds: 2
+        resources:
+          limits:
+            cpu: "2"
+            memory: 1Gi
+          requests:
+            cpu: 10m
+            memory: 40Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          privileged: false
+          readOnlyRootFilesystem: true
+          runAsGroup: 1337
+          runAsNonRoot: true
+          runAsUser: 1337
+        volumeMounts:
+        - mountPath: /var/run/secrets/istio
+          name: istiod-ca-cert
+        - mountPath: /var/lib/istio/data
+          name: istio-data
+        - mountPath: /etc/istio/proxy
+          name: istio-envoy
+        - mountPath: /var/run/secrets/tokens
+          name: istio-token
+        - mountPath: /etc/istio/pod
+          name: istio-podinfo
+      initContainers:
+      - args:
+        - istio-iptables
+        - -p
+        - "15001"
+        - -z
+        - "15006"
+        - -u
+        - "1337"
+        - -m
+        - REDIRECT
+        - -i
+        - '*'
+        - -x
+        - ""
+        - -b
+        - '*'
+        - -d
+        - 15090,15021,15020
+        env:
+        - name: DNS_AGENT
+        image: docker.io/istio/proxyv2:1.6.6
+        imagePullPolicy: Always
+        name: istio-init
+        resources:
+          limits:
+            cpu: 100m
+            memory: 50Mi
+          requests:
+            cpu: 10m
+            memory: 10Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            add:
+            - NET_ADMIN
+            - NET_RAW
+            drop:
+            - ALL
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsGroup: 0
+          runAsNonRoot: false
+          runAsUser: 0
+      securityContext:
+        fsGroup: 1337
+      serviceAccountName: bookinfo-reviews
+      volumes:
+      - emptyDir: {}
+        name: wlp-output
+      - emptyDir: {}
+        name: tmp
+      - emptyDir:
+          medium: Memory
+        name: istio-envoy
+      - emptyDir: {}
+        name: istio-data
+      - downwardAPI:
+          items:
+          - fieldRef:
+              fieldPath: metadata.labels
+            path: labels
+          - fieldRef:
+              fieldPath: metadata.annotations
+            path: annotations
+        name: istio-podinfo
+      - name: istio-token
+        projected:
+          sources:
+          - serviceAccountToken:
+              audience: istio-ca
+              expirationSeconds: 43200
+              path: istio-token
+      - configMap:
+          name: istio-ca-root-cert
+        name: istiod-ca-cert
+status: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: reviews
+    version: v2
+  name: reviews-v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reviews
+      version: v2
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/interceptionMode: REDIRECT
+        sidecar.istio.io/status: '{"version":"ed4e6e8ed4ffa03fe7d5b9d2c27cc8c478625ade64be2859cae3da0db9e5ee2e","initContainers":["istio-init"],"containers":["istio-proxy"],"volumes":["istio-envoy","istio-data","istio-podinfo","istio-token","istiod-ca-cert"],"imagePullSecrets":null}'
+        traffic.sidecar.istio.io/excludeInboundPorts: "15020"
+        traffic.sidecar.istio.io/includeInboundPorts: "9080"
+        traffic.sidecar.istio.io/includeOutboundIPRanges: '*'
+      creationTimestamp: null
+      labels:
+        app: reviews
+        istio.io/rev: ""
+        security.istio.io/tlsMode: istio
+        version: v2
+    spec:
+      containers:
+      - env:
+        - name: LOG_DIR
+          value: /tmp/logs
+        image: docker.io/istio/examples-bookinfo-reviews-v2:1.15.0
+        imagePullPolicy: IfNotPresent
+        name: reviews
+        ports:
+        - containerPort: 9080
+        resources: {}
+        volumeMounts:
+        - mountPath: /tmp
+          name: tmp
+        - mountPath: /opt/ibm/wlp/output
+          name: wlp-output
+      - args:
+        - proxy
+        - sidecar
+        - --domain
+        - $(POD_NAMESPACE).svc.cluster.local
+        - --serviceCluster
+        - reviews.$(POD_NAMESPACE)
+        - --proxyLogLevel=warning
+        - --proxyComponentLogLevel=misc:error
+        - --trust-domain=cluster.local
+        - --concurrency
+        - "2"
+        env:
+        - name: JWT_POLICY
+          value: third-party-jwt
+        - name: PILOT_CERT_PROVIDER
+          value: istiod
+        - name: CA_ADDR
+          value: istiod.istio-system.svc:15012
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: INSTANCE_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: SERVICE_ACCOUNT
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.serviceAccountName
+        - name: HOST_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: CANONICAL_SERVICE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['service.istio.io/canonical-name']
+        - name: CANONICAL_REVISION
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['service.istio.io/canonical-revision']
+        - name: PROXY_CONFIG
+          value: |
+            {"proxyMetadata":{"DNS_AGENT":""}}
+        - name: ISTIO_META_POD_PORTS
+          value: |-
+            [
+                {"containerPort":9080}
+            ]
+        - name: ISTIO_META_APP_CONTAINERS
+          value: |-
+            [
+                reviews
+            ]
+        - name: ISTIO_META_CLUSTER_ID
+          value: Kubernetes
+        - name: ISTIO_META_INTERCEPTION_MODE
+          value: REDIRECT
+        - name: ISTIO_META_WORKLOAD_NAME
+          value: reviews-v2
+        - name: ISTIO_META_OWNER
+          value: kubernetes://apis/apps/v1/namespaces/default/deployments/reviews-v2
+        - name: ISTIO_META_MESH_ID
+          value: cluster.local
+        - name: DNS_AGENT
+        - name: ISTIO_KUBE_APP_PROBERS
+          value: '{}'
+        image: docker.io/istio/proxyv2:1.6.6
+        imagePullPolicy: Always
+        name: istio-proxy
+        ports:
+        - containerPort: 15090
+          name: http-envoy-prom
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 30
+          httpGet:
+            path: /healthz/ready
+            port: 15021
+          initialDelaySeconds: 1
+          periodSeconds: 2
+        resources:
+          limits:
+            cpu: "2"
+            memory: 1Gi
+          requests:
+            cpu: 10m
+            memory: 40Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          privileged: false
+          readOnlyRootFilesystem: true
+          runAsGroup: 1337
+          runAsNonRoot: true
+          runAsUser: 1337
+        volumeMounts:
+        - mountPath: /var/run/secrets/istio
+          name: istiod-ca-cert
+        - mountPath: /var/lib/istio/data
+          name: istio-data
+        - mountPath: /etc/istio/proxy
+          name: istio-envoy
+        - mountPath: /var/run/secrets/tokens
+          name: istio-token
+        - mountPath: /etc/istio/pod
+          name: istio-podinfo
+      initContainers:
+      - args:
+        - istio-iptables
+        - -p
+        - "15001"
+        - -z
+        - "15006"
+        - -u
+        - "1337"
+        - -m
+        - REDIRECT
+        - -i
+        - '*'
+        - -x
+        - ""
+        - -b
+        - '*'
+        - -d
+        - 15090,15021,15020
+        env:
+        - name: DNS_AGENT
+        image: docker.io/istio/proxyv2:1.6.6
+        imagePullPolicy: Always
+        name: istio-init
+        resources:
+          limits:
+            cpu: 100m
+            memory: 50Mi
+          requests:
+            cpu: 10m
+            memory: 10Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            add:
+            - NET_ADMIN
+            - NET_RAW
+            drop:
+            - ALL
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsGroup: 0
+          runAsNonRoot: false
+          runAsUser: 0
+      securityContext:
+        fsGroup: 1337
+      serviceAccountName: bookinfo-reviews
+      volumes:
+      - emptyDir: {}
+        name: wlp-output
+      - emptyDir: {}
+        name: tmp
+      - emptyDir:
+          medium: Memory
+        name: istio-envoy
+      - emptyDir: {}
+        name: istio-data
+      - downwardAPI:
+          items:
+          - fieldRef:
+              fieldPath: metadata.labels
+            path: labels
+          - fieldRef:
+              fieldPath: metadata.annotations
+            path: annotations
+        name: istio-podinfo
+      - name: istio-token
+        projected:
+          sources:
+          - serviceAccountToken:
+              audience: istio-ca
+              expirationSeconds: 43200
+              path: istio-token
+      - configMap:
+          name: istio-ca-root-cert
+        name: istiod-ca-cert
+status: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: reviews
+    version: v3
+  name: reviews-v3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reviews
+      version: v3
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/interceptionMode: REDIRECT
+        sidecar.istio.io/status: '{"version":"ed4e6e8ed4ffa03fe7d5b9d2c27cc8c478625ade64be2859cae3da0db9e5ee2e","initContainers":["istio-init"],"containers":["istio-proxy"],"volumes":["istio-envoy","istio-data","istio-podinfo","istio-token","istiod-ca-cert"],"imagePullSecrets":null}'
+        traffic.sidecar.istio.io/excludeInboundPorts: "15020"
+        traffic.sidecar.istio.io/includeInboundPorts: "9080"
+        traffic.sidecar.istio.io/includeOutboundIPRanges: '*'
+      creationTimestamp: null
+      labels:
+        app: reviews
+        istio.io/rev: ""
+        security.istio.io/tlsMode: istio
+        version: v3
+    spec:
+      containers:
+      - env:
+        - name: LOG_DIR
+          value: /tmp/logs
+        image: docker.io/istio/examples-bookinfo-reviews-v3:1.15.0
+        imagePullPolicy: IfNotPresent
+        name: reviews
+        ports:
+        - containerPort: 9080
+        resources: {}
+        volumeMounts:
+        - mountPath: /tmp
+          name: tmp
+        - mountPath: /opt/ibm/wlp/output
+          name: wlp-output
+      - args:
+        - proxy
+        - sidecar
+        - --domain
+        - $(POD_NAMESPACE).svc.cluster.local
+        - --serviceCluster
+        - reviews.$(POD_NAMESPACE)
+        - --proxyLogLevel=warning
+        - --proxyComponentLogLevel=misc:error
+        - --trust-domain=cluster.local
+        - --concurrency
+        - "2"
+        env:
+        - name: JWT_POLICY
+          value: third-party-jwt
+        - name: PILOT_CERT_PROVIDER
+          value: istiod
+        - name: CA_ADDR
+          value: istiod.istio-system.svc:15012
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: INSTANCE_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: SERVICE_ACCOUNT
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.serviceAccountName
+        - name: HOST_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: CANONICAL_SERVICE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['service.istio.io/canonical-name']
+        - name: CANONICAL_REVISION
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['service.istio.io/canonical-revision']
+        - name: PROXY_CONFIG
+          value: |
+            {"proxyMetadata":{"DNS_AGENT":""}}
+        - name: ISTIO_META_POD_PORTS
+          value: |-
+            [
+                {"containerPort":9080}
+            ]
+        - name: ISTIO_META_APP_CONTAINERS
+          value: |-
+            [
+                reviews
+            ]
+        - name: ISTIO_META_CLUSTER_ID
+          value: Kubernetes
+        - name: ISTIO_META_INTERCEPTION_MODE
+          value: REDIRECT
+        - name: ISTIO_META_WORKLOAD_NAME
+          value: reviews-v3
+        - name: ISTIO_META_OWNER
+          value: kubernetes://apis/apps/v1/namespaces/default/deployments/reviews-v3
+        - name: ISTIO_META_MESH_ID
+          value: cluster.local
+        - name: DNS_AGENT
+        - name: ISTIO_KUBE_APP_PROBERS
+          value: '{}'
+        image: docker.io/istio/proxyv2:1.6.6
+        imagePullPolicy: Always
+        name: istio-proxy
+        ports:
+        - containerPort: 15090
+          name: http-envoy-prom
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 30
+          httpGet:
+            path: /healthz/ready
+            port: 15021
+          initialDelaySeconds: 1
+          periodSeconds: 2
+        resources:
+          limits:
+            cpu: "2"
+            memory: 1Gi
+          requests:
+            cpu: 10m
+            memory: 40Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          privileged: false
+          readOnlyRootFilesystem: true
+          runAsGroup: 1337
+          runAsNonRoot: true
+          runAsUser: 1337
+        volumeMounts:
+        - mountPath: /var/run/secrets/istio
+          name: istiod-ca-cert
+        - mountPath: /var/lib/istio/data
+          name: istio-data
+        - mountPath: /etc/istio/proxy
+          name: istio-envoy
+        - mountPath: /var/run/secrets/tokens
+          name: istio-token
+        - mountPath: /etc/istio/pod
+          name: istio-podinfo
+      initContainers:
+      - args:
+        - istio-iptables
+        - -p
+        - "15001"
+        - -z
+        - "15006"
+        - -u
+        - "1337"
+        - -m
+        - REDIRECT
+        - -i
+        - '*'
+        - -x
+        - ""
+        - -b
+        - '*'
+        - -d
+        - 15090,15021,15020
+        env:
+        - name: DNS_AGENT
+        image: docker.io/istio/proxyv2:1.6.6
+        imagePullPolicy: Always
+        name: istio-init
+        resources:
+          limits:
+            cpu: 100m
+            memory: 50Mi
+          requests:
+            cpu: 10m
+            memory: 10Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            add:
+            - NET_ADMIN
+            - NET_RAW
+            drop:
+            - ALL
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsGroup: 0
+          runAsNonRoot: false
+          runAsUser: 0
+      securityContext:
+        fsGroup: 1337
+      serviceAccountName: bookinfo-reviews
+      volumes:
+      - emptyDir: {}
+        name: wlp-output
+      - emptyDir: {}
+        name: tmp
+      - emptyDir:
+          medium: Memory
+        name: istio-envoy
+      - emptyDir: {}
+        name: istio-data
+      - downwardAPI:
+          items:
+          - fieldRef:
+              fieldPath: metadata.labels
+            path: labels
+          - fieldRef:
+              fieldPath: metadata.annotations
+            path: annotations
+        name: istio-podinfo
+      - name: istio-token
+        projected:
+          sources:
+          - serviceAccountToken:
+              audience: istio-ca
+              expirationSeconds: 43200
+              path: istio-token
+      - configMap:
+          name: istio-ca-root-cert
+        name: istiod-ca-cert
+status: {}
+---
+##################################################################################################
+# Productpage services
+##################################################################################################
+apiVersion: v1
+kind: Service
+metadata:
+  name: productpage
+  labels:
+    app: productpage
+    service: productpage
+spec:
+  ports:
+  - port: 9080
+    name: http
+  selector:
+    app: productpage
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: bookinfo-productpage
+  labels:
+    account: productpage
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: productpage
+    version: v1
+  name: productpage-v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: productpage
+      version: v1
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/interceptionMode: REDIRECT
+        sidecar.istio.io/status: '{"version":"ed4e6e8ed4ffa03fe7d5b9d2c27cc8c478625ade64be2859cae3da0db9e5ee2e","initContainers":["istio-init"],"containers":["istio-proxy"],"volumes":["istio-envoy","istio-data","istio-podinfo","istio-token","istiod-ca-cert"],"imagePullSecrets":null}'
+        traffic.sidecar.istio.io/excludeInboundPorts: "15020"
+        traffic.sidecar.istio.io/includeInboundPorts: "9080"
+        traffic.sidecar.istio.io/includeOutboundIPRanges: '*'
+      creationTimestamp: null
+      labels:
+        app: productpage
+        istio.io/rev: ""
+        security.istio.io/tlsMode: istio
+        version: v1
+    spec:
+      containers:
+      - image: docker.io/istio/examples-bookinfo-productpage-v1:1.15.0
+        imagePullPolicy: IfNotPresent
+        name: productpage
+        ports:
+        - containerPort: 9080
+        resources: {}
+        volumeMounts:
+        - mountPath: /tmp
+          name: tmp
+      - args:
+        - proxy
+        - sidecar
+        - --domain
+        - $(POD_NAMESPACE).svc.cluster.local
+        - --serviceCluster
+        - productpage.$(POD_NAMESPACE)
+        - --proxyLogLevel=warning
+        - --proxyComponentLogLevel=misc:error
+        - --trust-domain=cluster.local
+        - --concurrency
+        - "2"
+        env:
+        - name: JWT_POLICY
+          value: third-party-jwt
+        - name: PILOT_CERT_PROVIDER
+          value: istiod
+        - name: CA_ADDR
+          value: istiod.istio-system.svc:15012
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: INSTANCE_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: SERVICE_ACCOUNT
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.serviceAccountName
+        - name: HOST_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: CANONICAL_SERVICE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['service.istio.io/canonical-name']
+        - name: CANONICAL_REVISION
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['service.istio.io/canonical-revision']
+        - name: PROXY_CONFIG
+          value: |
+            {"proxyMetadata":{"DNS_AGENT":""}}
+        - name: ISTIO_META_POD_PORTS
+          value: |-
+            [
+                {"containerPort":9080}
+            ]
+        - name: ISTIO_META_APP_CONTAINERS
+          value: |-
+            [
+                productpage
+            ]
+        - name: ISTIO_META_CLUSTER_ID
+          value: Kubernetes
+        - name: ISTIO_META_INTERCEPTION_MODE
+          value: REDIRECT
+        - name: ISTIO_META_WORKLOAD_NAME
+          value: productpage-v1
+        - name: ISTIO_META_OWNER
+          value: kubernetes://apis/apps/v1/namespaces/default/deployments/productpage-v1
+        - name: ISTIO_META_MESH_ID
+          value: cluster.local
+        - name: DNS_AGENT
+        - name: ISTIO_KUBE_APP_PROBERS
+          value: '{}'
+        image: docker.io/istio/proxyv2:1.6.6
+        imagePullPolicy: Always
+        name: istio-proxy
+        ports:
+        - containerPort: 15090
+          name: http-envoy-prom
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 30
+          httpGet:
+            path: /healthz/ready
+            port: 15021
+          initialDelaySeconds: 1
+          periodSeconds: 2
+        resources:
+          limits:
+            cpu: "2"
+            memory: 1Gi
+          requests:
+            cpu: 10m
+            memory: 40Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          privileged: false
+          readOnlyRootFilesystem: true
+          runAsGroup: 1337
+          runAsNonRoot: true
+          runAsUser: 1337
+        volumeMounts:
+        - mountPath: /var/run/secrets/istio
+          name: istiod-ca-cert
+        - mountPath: /var/lib/istio/data
+          name: istio-data
+        - mountPath: /etc/istio/proxy
+          name: istio-envoy
+        - mountPath: /var/run/secrets/tokens
+          name: istio-token
+        - mountPath: /etc/istio/pod
+          name: istio-podinfo
+      initContainers:
+      - args:
+        - istio-iptables
+        - -p
+        - "15001"
+        - -z
+        - "15006"
+        - -u
+        - "1337"
+        - -m
+        - REDIRECT
+        - -i
+        - '*'
+        - -x
+        - ""
+        - -b
+        - '*'
+        - -d
+        - 15090,15021,15020
+        env:
+        - name: DNS_AGENT
+        image: docker.io/istio/proxyv2:1.6.6
+        imagePullPolicy: Always
+        name: istio-init
+        resources:
+          limits:
+            cpu: 100m
+            memory: 50Mi
+          requests:
+            cpu: 10m
+            memory: 10Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            add:
+            - NET_ADMIN
+            - NET_RAW
+            drop:
+            - ALL
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsGroup: 0
+          runAsNonRoot: false
+          runAsUser: 0
+      securityContext:
+        fsGroup: 1337
+      serviceAccountName: bookinfo-productpage
+      volumes:
+      - emptyDir: {}
+        name: tmp
+      - emptyDir:
+          medium: Memory
+        name: istio-envoy
+      - emptyDir: {}
+        name: istio-data
+      - downwardAPI:
+          items:
+          - fieldRef:
+              fieldPath: metadata.labels
+            path: labels
+          - fieldRef:
+              fieldPath: metadata.annotations
+            path: annotations
+        name: istio-podinfo
+      - name: istio-token
+        projected:
+          sources:
+          - serviceAccountToken:
+              audience: istio-ca
+              expirationSeconds: 43200
+              path: istio-token
+      - configMap:
+          name: istio-ca-root-cert
+        name: istiod-ca-cert
+status: {}
+---

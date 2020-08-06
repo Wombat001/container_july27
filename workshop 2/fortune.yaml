@@ -1,0 +1,59 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata: 
+  name: fortune-ns
+  labels: 
+    app: fortune
+    version: v1
+    cost-center: engineering
+
+---
+#Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fortune-deploy
+  namespace: fortune-ns
+  labels: 
+    app: fortune
+
+spec:
+  replicas: 3 #we have three nodes
+  selector:
+    matchLabels: #in a environment of multiple pods k8 recognizes which to deploy according to the labels
+      app: fortune-pod
+  template: #template of the port to be deployed
+    metadata:
+      name: fortune-pod
+      labels:
+        app: fortune-pod
+    spec:
+      containers:
+      - name: fortune-container
+        image: chukmunnlee/fortune:v1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: fortport
+          containerPort: 3000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fortune-svc
+  namespace: fortune-ns
+  labels:
+    app: fortune
+
+spec: 
+  #type: ClusterIP 
+  type: LoadBalancer
+  selector:
+    app: fortune-pod
+  ports:
+  - name: fortsvcport
+    port: 80
+    targetPort: fortport
+
+

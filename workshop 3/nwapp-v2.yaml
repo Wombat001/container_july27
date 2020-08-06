@@ -1,0 +1,92 @@
+#This version is for ingress Canary 
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nwappv2-cm
+  labels:
+    app: northwind
+
+data:
+  DB_USER: root
+  DB_HOST: nwdb-svc.nw.svc.cluster.local #fully qualified domain name
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nwappv2-deploy
+  labels:
+    app: northwind
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nwappv2-pod
+  template:
+    metadata:
+      name: nwappv2-pod
+      labels:
+        app: nwappv2-pod
+    spec:
+      containers:
+      - name: nwappv2-container
+        #image: chukmunnlee/my-nwapp:v1
+        image: stackupiss/northwind-app:v2
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: nw-secret
+              key: MYSQL_ROOT_PASSWORD
+        - name: INSTANCE_IP_ADDRESS
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP 
+        envFrom:
+        - configMapRef:
+            name: nwappv2-cm
+        ports:
+        - name: nwappv2-port
+          containerPort: 3000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nwappv2-svc
+  #namespace: nwappv2-svc-ns # namespace can be set in execution 
+  labels:
+    app: northwind
+
+spec: 
+  type: ClusterIP
+  selector:
+    app: nwappv2-pod
+  ports:
+  - name: nwappv2svcport
+    port: 3000
+    targetPort: nwappv2-port
+
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: nwappv2-ing
+  labels:
+    app: northwind
+  annotations:
+    nginx-ingress.kubernetes.io/canary: "true"
+    nginx-ingress.kubernetes.io/canary-weight: "10"
+
+spec:
+  rules:
+  - host: nwappv2.167.172.5.11.nip.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nwappv2-svc
+          servicePort: nwappv2svcport
